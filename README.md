@@ -2,6 +2,7 @@ This project is web application for passing psyhological test "Methodology for d
 (on the red-black Schulte-Platonov tables)". This test is very useful for professional selection for some specialist (train drivers, operators, dispatchers, pilots etc.)
 Main discription of the test is on Russian language:
 
+Методика определения скорости переключения внимания (ПВ) (на красно-черных таблицах Шульте-Платонова)
 Условия проведения обследования - изолированная комната.
 Содержание обследования.
 Испытуемому предъявляется квадрат, разделенный на определенное число мелких квадратов, в которых помещены в случайном порядке арабские числа от 1 до 25 черного и от 1 до 24 красного цвета.
