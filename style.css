@@ -4,3 +4,35 @@ body {
   align-items: center;
   background: linear-gradient(to top left, #b6f2e2, #7fbf97);
 }
+table {
+  width: 50%;
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+  width: 10%;
+  position: relative;
+}
+td:after {
+  content: "";
+  display: block;
+  margin-top: 100%;
+}
+td .my_div {
+  font-size: 400;
+  position: absolute;
+  padding-top: 70;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+.table_center {
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  width: 50%;
+  border: 1px solid #030303;
+}
