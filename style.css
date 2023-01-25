@@ -1,17 +1,23 @@
 body {
   height: 100vh;
   display: flex;
+  padding: 0;
   align-items: center;
-  background: linear-gradient(to top left, #b6f2e2, #7fbf97);
+  background: linear-gradient(to top left, #f7f7f6, #f2f7e3);
 }
+
 table {
   width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  vertical-align: middle;
 }
 td {
   text-align: center;
   vertical-align: middle;
   width: 10%;
   position: relative;
+  font-size: 400;
 }
 td:after {
   content: "";
@@ -21,7 +27,7 @@ td:after {
 td .my_div {
   font-size: 400;
   position: absolute;
-  padding-top: 70;
+  padding-top: 0;
   top: 0;
   bottom: 0;
   left: 0;
@@ -29,7 +35,7 @@ td .my_div {
   background: white;
 }
 
-.table_center {
+table .table_center {
   margin: auto;
   text-align: center;
   vertical-align: middle;
