@@ -13,9 +13,9 @@ console.log(redArray);
 */
 function generateTable() {
   // creates a <table> element and a <tbody> element
-  const tbl = document.createElement("table", { class: "table_center" });
+  const tbl = document.createElement("table");
   const tblBody = document.createElement("tbody");
-  //document.table.classList.add("table_center");
+
   // creating all cells
   for (let i = 0; i < 7; i++) {
     // creates a table row
@@ -25,9 +25,10 @@ function generateTable() {
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
-      const cell = document.createElement("td", { class: "my_div" });
+      const cell = document.createElement("td");
       const cellText = document.createTextNode(`row ${i}, column ${j}`);
       cell.appendChild(cellText);
+      cell.className = "table_cell";
       row.appendChild(cell);
     }
 

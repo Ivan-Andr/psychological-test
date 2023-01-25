@@ -1,44 +1,15 @@
 body {
-  height: 100vh;
-  display: flex;
-  padding: 0;
-  align-items: center;
   background: linear-gradient(to top left, #f7f7f6, #f2f7e3);
 }
 
 table {
-  width: 50%;
-  height: 50%;
-  margin: 0 auto;
-  vertical-align: middle;
+  width: 490px;
+  margin: auto;
 }
 td {
-  text-align: center;
-  vertical-align: middle;
-  width: 10%;
-  position: relative;
-  font-size: 400;
+  width: 70px;
+  height: 70px;
 }
-td:after {
-  content: "";
-  display: block;
-  margin-top: 100%;
-}
-td .my_div {
-  font-size: 400;
-  position: absolute;
-  padding-top: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.table_cell {
   background: white;
-}
-
-table .table_center {
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-  width: 50%;
-  border: 1px solid #030303;
 }
