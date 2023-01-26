@@ -3,12 +3,13 @@ body {
 }
 
 table {
-  width: 490px;
+  width: 735px;
   margin: auto;
 }
 td {
-  width: 70px;
-  height: 70px;
+  width: 105px;
+  height: 105px;
+  text-align: center;
 }
 .table_cell {
   background: white;
