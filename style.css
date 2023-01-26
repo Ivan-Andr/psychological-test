@@ -1,6 +1,16 @@
 body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(to top left, #b6f2e2, #7fbf97);
+  background: linear-gradient(to top left, #f7f7f6, #f2f7e3);
+}
+
+table {
+  width: 735px;
+  margin: auto;
+}
+td {
+  width: 105px;
+  height: 105px;
+  text-align: center;
+}
+.table_cell {
+  background: white;
 }
