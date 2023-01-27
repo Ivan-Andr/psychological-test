@@ -10,7 +10,12 @@ td {
   width: 105px;
   height: 105px;
   text-align: center;
+  font-size: 60px;
 }
-.table_cell {
+.table_cell_black {
   background: white;
+}
+.table_cell_red {
+  background: white;
+  color: red;
 }
