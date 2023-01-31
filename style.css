@@ -1,5 +1,10 @@
 body {
-  background: linear-gradient(to top left, #f7f7f6, #f2f7e3);
+  background: #e2e2e2;
+  display: flex;
+  flex-direction: row;
+}
+body > * {
+  flex: 1 100%;
 }
 
 table {
@@ -18,4 +23,30 @@ td {
 .table_cell_red {
   background: white;
   color: red;
+}
+.ui--space {
+  float: right;
+  width: 40%;
+}
+.btn {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 40px;
+  margin: 2rem 2rem;
+  border: 1px solid #444;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: darkgreen;
+  color: #fff;
+}
+
+@media all and (min-width: 800px) {
+  .table--space {
+    flex: 3 0px;
+  }
+  .ui--space {
+    order: 1;
+  }
 }
