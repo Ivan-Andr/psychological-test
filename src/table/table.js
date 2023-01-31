@@ -9,14 +9,9 @@ const redArray = [
   2, 5, 6, 7, 10, 11, 13, 15, 16, 19, 21, 25, 27, 28, 29, 31, 32, 37, 40, 42,
   43, 45, 46, 48,
 ];
-const tableSpace = document.createElement("article");
-document.body.appendChild(tableSpace);
-tableSpace.className = "tbl--space";
+const tableSpace = document.querySelector ('.table--space');
 
 export function generateTable() {
-  const tableSpace = document.createElement("article");
-  document.body.append(tableSpace);
-  tableSpace.className = "tbl--space";
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement("table");
   const tblBody = document.createElement("tbody");
@@ -55,19 +50,9 @@ export function generateTable() {
   // sets the border attribute of tbl to '2'
   tbl.setAttribute("border", "1");
 }
-const rightSpace = document.createElement("aside");
-document.body.appendChild(rightSpace);
-rightSpace.className = "ui--space";
-const btnStart = document.createElement("button");
-document.body.appendChild(btnStart);
-btnStart.className = "btn";
-btnStart.innerHTML = "Начать тест";
-const btnFinish = document.createElement("button");
-document.body.appendChild(btnFinish);
-btnFinish.innerHTML = "Завершить тест";
-btnFinish.className = "btn";
-rightSpace.appendChild(btnStart);
-rightSpace.appendChild(btnFinish);
+const rightSpace = document.querySelector('.ui--space');
+const btnStart = document.querySelector (".btn--start");
+const btnFinish = document.querySelector(".btn--finish");
 btnStart.addEventListener("click", function () {
   console.log("Test started");
 });
