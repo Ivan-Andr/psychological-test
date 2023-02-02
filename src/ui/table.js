@@ -11,7 +11,7 @@ const redArray = [
 ];
 const tableSpace = document.querySelector(".table--space");
 
-export function generateTable() {
+export const table = () => {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement("table");
   const tblBody = document.createElement("tbody");
@@ -49,4 +49,4 @@ export function generateTable() {
   tableSpace.appendChild(tbl);
   // sets the border attribute of tbl to '2'
   tbl.setAttribute("border", "1");
-}
+};

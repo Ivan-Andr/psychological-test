@@ -9,14 +9,37 @@
   </head>
   <body>
     <script type="module" src="script.js"></script>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h2>❗ Инструкция по выполнению теста</h2>
+      <p>
+        Задание 3. "Сейчас Вы должны одновременно находить и черные, и красные
+        числа, чередуя их в следующем порядке: 1 черная - 24 красная, 2 черная -
+        23 красная, 3 черная - 22 красная и т.д., т.е. цифры черного цвета
+        нарастают (как в первом задании), а цифры красного цвета убывают (как во
+        втором задании). Закончить Вы должны самой маленькой красной и самой
+        большой черной цифрой, т.е. 1кр. - 25чер. Задание необходимо довести до
+        конца, не прерывая его".
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
     <header class="header">Черно-красная таблица Платонова-Шульте</header>
     <article class="table--space"></article>
     <aside class="ui--space">
-      <button class="btn btn--start">Начать тест</button>
-      <button class="btn btn--finish">Завершить тест</button>
-      <p class="test-timer">
-        Время выполнения теста: <span class="timer">0 сек</span>
-      </p>
+      <div>
+        <button class="btn btn--start">Начать тест</button>
+      </div>
+      <div>
+        <button class="btn btn--finish">Завершить тест</button>
+      </div>
+      <div>
+        <p class="test-timer">
+          ⏱️ Время выполнения теста: <span class="timer">0 сек</span>
+        </p>
+      </div>
+      <div>
+        <button class="btn btn--instruction">Инструкция к тесту</button>
+      </div>
     </aside>
     <footer class="footer">© All rights reserved</footer>
   </body>

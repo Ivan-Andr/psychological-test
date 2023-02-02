@@ -1,5 +1,5 @@
 "use strict";
-import { generateTable } from "./src/table/table.js";
-import { buttons } from "./src/table/ui.js";
-generateTable();
+import { table } from "./src/ui/table.js";
+import { buttons } from "./src/ui/buttons.js";
+table();
 buttons();
