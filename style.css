@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 body {
-  background: #e2e2e2;
+  background: #ecf0f1;
   height: 100vh;
   display: flex;
   flex-flow: row wrap;
@@ -17,7 +17,7 @@ body > * {
   /* background: darkgrey; */
   height: 50px;
   font-size: 25px;
-  margin-bottom: 0%;
+  margin: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -42,7 +42,7 @@ td {
   cursor: pointer;
 }
 td:hover {
-  background-color: darkgray;
+  background-color: #bdc3c7;
 }
 .table_cell_black {
   background: white;
@@ -62,16 +62,16 @@ td:hover {
   cursor: pointer;
 }
 .btn--start:hover {
-  background-color: darkgreen;
+  background-color: #2ecc71;
   color: #fff;
 }
 
 .btn--finish:hover {
-  background-color: darkred;
+  background-color: #e74c3c;
   color: #fff;
 }
 .btn--instruction:hover {
-  background-color: darkgrey;
+  background-color: #3498db;
   color: #fff;
 }
 .ui--space {
@@ -105,7 +105,7 @@ td:hover {
 .modal {
   position: absolute;
   top: 50%;
-  left: 70%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
   font-size: 20px;

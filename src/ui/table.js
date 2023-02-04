@@ -30,20 +30,28 @@ export const table = () => {
       cell.setAttribute("id", `table-cell-${k}`);
       //cell.setAttribute("id", "cellTest");
       const cellText = document.createTextNode(tableArr[k]);
-
       cell.appendChild(cellText);
+
+      // if (redArray.includes(k)) {
+      //   cell.className = "table_cell_red";
+
+      //   cell.addEventListener("click", function () {
+      //     console.log(`${tableArr[k]} red is clicked`);
+      //   });
+      // } else {
+      //   cell.className = "table_cell_black";
+      //   cell.addEventListener("click", function () {
+      //     console.log(`${tableArr[k]} black is clicked`);
+      //   });
+      // }
       if (redArray.includes(k)) {
         cell.className = "table_cell_red";
-
-        cell.addEventListener("click", function () {
-          console.log(`${tableArr[k]} red is clicked`);
-        });
       } else {
         cell.className = "table_cell_black";
-        cell.addEventListener("click", function () {
-          console.log(`${tableArr[k]} black is clicked`);
-        });
       }
+      cell.addEventListener("click", (event) => {
+        console.log(`${event.target.innerText} ${event.target.className}`);
+      });
       row.appendChild(cell);
     }
 
