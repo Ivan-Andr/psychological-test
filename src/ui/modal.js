@@ -1,5 +1,5 @@
-const overlay = document.querySelector(".overlay");
-const showInstruction = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay-instruction");
+const showInstruction = document.querySelector(".modal-instruction");
 
 export const modal = () => {
   const openModal = function () {
