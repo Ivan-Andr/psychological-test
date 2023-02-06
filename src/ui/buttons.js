@@ -7,15 +7,18 @@ const btnFinish = document.querySelector(".btn--finish");
 const btnInstruction = document.querySelector(".btn--instruction");
 const btnCloseInstruction = document.querySelector(".close-modal");
 const btnOpenForm = document.querySelector(".login-button");
+const btnCloseForm = document.querySelector(".close-modal-form");
 
 const { openModal, closeModal } = modal();
 const { startTestTimer, stopTestTimer } = timer();
+const { openModalForm, closeModalForm } = openForm();
 
 export const startApp = () => {
   btnOpenForm.addEventListener("click", function () {
-    openForm();
+    openModalForm();
     console.log("Open form");
   });
+  btnCloseForm.addEventListener("click", closeModalForm);
 };
 
 export const buttons = () => {

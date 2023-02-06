@@ -25,9 +25,32 @@
     <div class="overlay-instruction hidden"></div>
 
     <div class="modal-form hidden">
-      <button class="close-modal">&times;</button>
+      <button class="close-modal-form">&times;</button>
       <h2>📝 Введите свои данные</h2>
-      <p></p>
+      <form action="" class="dataForm">
+        <label for="first-name">Имя</label>
+        <input type="text" id="firstName" name="first-name" />
+        <label for="last-name">Фамилия</label>
+        <input type="text" id="lastName" name="last-name" />
+        <label for="birth-year">Дата рождения</label>
+        <input type="date" id="birthDate" name="birth-date" />
+        <label for="professoin">Специальность</label>
+        <input type="text" id="profession" name="last-name" />
+        <label for="testNumber">Выберите номер теста</label>
+        <select name="test-number" id="testNumber">
+          <option value="">--Выберите номер--</option>
+          <option value="num1">1</option>
+          <option value="num2">2</option>
+          <option value="num3">3</option>
+          <option value="num4">4</option>
+          <option value="num5">5</option>
+          <option value="num6">6</option>
+          <option value="num7">7</option>
+          <option value="num8">8</option>
+        </select>
+
+        <button type="submit" class="formSubmit">Отправить</button>
+      </form>
     </div>
     <div class="overlay-form hidden"></div>
 
