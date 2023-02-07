@@ -27,17 +27,28 @@
     <div class="modal-form hidden">
       <button class="close-modal-form">&times;</button>
       <h2>📝 Введите свои данные</h2>
-      <form action="" class="dataForm">
+      <form
+        action=""
+        class="userDataForm"
+        onkeydown="if(event.keyCode==13){return false;}"
+      >
         <label for="first-name">Имя</label>
-        <input type="text" id="firstName" name="first-name" />
+        <input type="text" id="firstName" name="first-name" required />
         <label for="last-name">Фамилия</label>
-        <input type="text" id="lastName" name="last-name" />
-        <label for="birth-year">Дата рождения</label>
-        <input type="date" id="birthDate" name="birth-date" />
+        <input type="text" id="lastName" name="last-name" required />
+        <label for="birth-year">Год рождения</label>
+        <input
+          type="number"
+          max="2023"
+          min="1923"
+          id="birthYear"
+          name="birth-year"
+          required
+        />
         <label for="professoin">Специальность</label>
-        <input type="text" id="profession" name="last-name" />
+        <input type="text" id="profession" name="profession" required />
         <label for="testNumber">Выберите номер теста</label>
-        <select name="test-number" id="testNumber">
+        <select name="test-number" id="testNumber" required>
           <option value="">--Выберите номер--</option>
           <option value="num1">1</option>
           <option value="num2">2</option>
