@@ -27,11 +27,7 @@
     <div class="modal-form hidden">
       <button class="close-modal-form">&times;</button>
       <h2>📝 Введите свои данные</h2>
-      <form
-        action=""
-        class="userDataForm"
-        onkeydown="if(event.keyCode==13){return false;}"
-      >
+      <form action="" class="userDataForm">
         <label for="first-name">Имя</label>
         <input type="text" id="firstName" name="first-name" required />
         <label for="last-name">Фамилия</label>
@@ -66,10 +62,10 @@
     <div class="overlay-form hidden"></div>
 
     <header class="header">
-      <img src="logo.png" alt="Logo" class="logo" />
+      <img src="/src/assets/logo.png" alt="Logo" class="logo" />
       <p>Черно-красная таблица Платонова-Шульте</p>
       <button class="login-button">
-        <img src="login-logo.png" alt="login" />
+        <img src="/src/assets/login-logo.png" alt="login" />
       </button>
     </header>
     <article class="table--space"></article>

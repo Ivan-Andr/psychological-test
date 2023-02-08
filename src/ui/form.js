@@ -7,7 +7,6 @@ const inputUserLastName = document.querySelector("#lastName");
 const inputUserBirthYear = document.querySelector("#birthYear");
 const inputUserProfession = document.querySelector("#profession");
 const inputTestNumber = document.querySelector("#testNumber");
-const btnFormSubmit = document.querySelector(".formSubmit");
 const inputDataForm = document.querySelector(".userDataForm");
 
 let userObject = {
@@ -18,7 +17,7 @@ let userObject = {
   tableNumber: 0,
   testDate: new Date(),
 };
-export const openForm = function () {
+export const form = function () {
   const openModalForm = function () {
     showForm.classList.remove("hidden");
     overlayForm.classList.remove("hidden");
@@ -30,7 +29,7 @@ export const openForm = function () {
     tableSpace.style.pointerEvents = "auto";
     uiSpace.style.opacity = 100;
     uiSpace.style.pointerEvents = "auto";
-    console.log("form submitted");
+    //console.log("form submitted");
   };
   const closeModalForm = function () {
     showForm.classList.add("hidden");
@@ -48,7 +47,7 @@ export const openForm = function () {
     submitModalForm();
     closeModalForm();
     updateUserObject();
-    console.log(userObject);
+    //console.log(userObject);
   });
   overlayForm.addEventListener("click", closeModalForm);
   return { openModalForm, closeModalForm };
