@@ -9,7 +9,7 @@
   </head>
   <body>
     <script type="module" src="script.js"></script>
-    <div class="modal hidden">
+    <div class="modal-instruction hidden">
       <button class="close-modal">&times;</button>
       <h2>❗ Инструкция по выполнению теста</h2>
       <p>
@@ -22,11 +22,51 @@
         конца, не прерывая его".
       </p>
     </div>
-    <div class="overlay hidden"></div>
+    <div class="overlay-instruction hidden"></div>
+
+    <div class="modal-form hidden">
+      <button class="close-modal-form">&times;</button>
+      <h2>📝 Введите свои данные</h2>
+      <form action="" class="userDataForm">
+        <label for="first-name">Имя</label>
+        <input type="text" id="firstName" name="first-name" required />
+        <label for="last-name">Фамилия</label>
+        <input type="text" id="lastName" name="last-name" required />
+        <label for="birth-year">Год рождения</label>
+        <input
+          type="number"
+          max="2023"
+          min="1923"
+          id="birthYear"
+          name="birth-year"
+          required
+        />
+        <label for="professoin">Специальность</label>
+        <input type="text" id="profession" name="profession" required />
+        <label for="testNumber">Выберите номер теста</label>
+        <select name="test-number" id="testNumber" required>
+          <option value="">--Выберите номер--</option>
+          <option value="num1">1</option>
+          <option value="num2">2</option>
+          <option value="num3">3</option>
+          <option value="num4">4</option>
+          <option value="num5">5</option>
+          <option value="num6">6</option>
+          <option value="num7">7</option>
+          <option value="num8">8</option>
+        </select>
+
+        <button type="submit" class="formSubmit">Отправить</button>
+      </form>
+    </div>
+    <div class="overlay-form hidden"></div>
 
     <header class="header">
-      <img src="logo.png" alt="Logo" class="logo" />
+      <img src="/src/assets/logo.png" alt="Logo" class="logo" />
       <p>Черно-красная таблица Платонова-Шульте</p>
+      <button class="login-button">
+        <img src="/src/assets/login-logo.png" alt="login" />
+      </button>
     </header>
     <article class="table--space"></article>
     <aside class="ui--space">
@@ -45,6 +85,6 @@
         <button class="btn btn--instruction">Инструкция к тесту</button>
       </div>
     </aside>
-    <footer class="footer">© All rights reserved</footer>
+    <footer class="footer">2023 © All rights reserved</footer>
   </body>
 </html>

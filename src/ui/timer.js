@@ -5,6 +5,7 @@ export const timer = () => {
   const startTestTimer = function () {
     let time = 0;
     const tick = function () {
+      labelTimer.style.color = "#333";
       labelTimer.textContent = `${time} сек`;
       if (time >= 20) {
         labelTimer.style.color = "red";
