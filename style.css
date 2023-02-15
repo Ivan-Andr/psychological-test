@@ -26,7 +26,15 @@ body > * {
 .logo {
   height: 45px;
 }
-
+.change-lang {
+  width: auto;
+  cursor: pointer;
+  background-color: #ecf0f1;
+  border: none;
+}
+.change-lang:hover {
+  background-color: #bdc3c7;
+}
 .footer {
   margin-top: auto;
 }
