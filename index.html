@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Comatible" content="ie = edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>Тест на определение скорости переключения внимания</title>
+    <title class="page-name">
+      Тест на определение скорости переключения внимания
+    </title>
   </head>
   <body>
     <script type="module" src="script.js"></script>
     <div class="modal-instruction hidden">
       <button class="close-modal">&times;</button>
-      <h2>❗ Инструкция по выполнению теста</h2>
-      <p>
+      <h2 class="instruction-header">❗ Инструкция по выполнению теста</h2>
+      <p class="instruction-stage3">
         Задание 3. "Сейчас Вы должны одновременно находить и черные, и красные
         числа, чередуя их в следующем порядке: 1 черная - 24 красная, 2 черная -
         23 красная, 3 черная - 22 красная и т.д., т.е. цифры черного цвета
@@ -26,13 +28,13 @@
 
     <div class="modal-form hidden">
       <button class="close-modal-form">&times;</button>
-      <h2>📝 Введите свои данные</h2>
+      <h2 class="form-header">📝 Введите свои данные</h2>
       <form action="" class="userDataForm">
-        <label for="first-name">Имя</label>
+        <label for="first-name" class="first-name">Имя</label>
         <input type="text" id="firstName" name="first-name" required />
-        <label for="last-name">Фамилия</label>
+        <label for="last-name" class="last-name">Фамилия</label>
         <input type="text" id="lastName" name="last-name" required />
-        <label for="birth-year">Год рождения</label>
+        <label for="birth-year" class="birth-year">Год рождения</label>
         <input
           type="number"
           max="2023"
@@ -41,10 +43,12 @@
           name="birth-year"
           required
         />
-        <label for="professoin">Специальность</label>
+        <label for="profession" class="profession">Специальность</label>
         <input type="text" id="profession" name="profession" required />
-        <label for="testNumber">Выберите номер теста</label>
-        <select name="test-number" id="testNumber" required>
+        <label for="test-number" class="test-number"
+          >Выберите номер теста</label
+        >
+        <select name="testNumber" id="testNumber" required>
           <option value="">--Выберите номер--</option>
           <option value="num1">1</option>
           <option value="num2">2</option>
@@ -63,9 +67,9 @@
 
     <header class="header">
       <img src="/src/assets/logo.png" alt="Logo" class="logo" />
-      <p>Черно-красная таблица Платонова-Шульте</p>
+      <p class="page-header">Черно-красная таблица Платонова-Шульте</p>
       <select class="change-lang">
-        <option value="uz">🌐ЎЗБ</option>
+        <option value="uz">🌐O`ZB</option>
         <option value="ru" selected>🌐РУС</option>
         <option value="en">🌐ENG</option>
       </select>
@@ -82,9 +86,8 @@
         <button class="btn btn--finish">Завершить тест</button>
       </div>
       <div>
-        <p class="test-timer">
-          ⏱️ Время выполнения теста: <span class="timer">0 сек</span>
-        </p>
+        <p class="test-timer">⏱️ Время выполнения теста:</p>
+        <p class="timer">0</p>
       </div>
       <div>
         <button class="btn btn--instruction">Инструкция к тесту</button>

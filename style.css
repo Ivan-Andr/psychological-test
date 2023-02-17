@@ -2,7 +2,7 @@
 
 body {
   background: #ecf0f1;
-  height: 100vh;
+  height: 99vh;
   display: flex;
   flex-flow: row wrap;
   text-align: center;
@@ -121,6 +121,11 @@ td:hover {
 
 .test-timer {
   font-size: 20px;
+  text-align: center;
+}
+.timer {
+  font-size: 23px;
+  font-weight: bold;
   text-align: center;
 }
 .modal-instruction,
