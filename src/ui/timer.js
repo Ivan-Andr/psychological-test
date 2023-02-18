@@ -1,12 +1,19 @@
-const labelTimer = document.querySelector(".timer");
-
+"use srtict";
+import { langSelect } from "./lang.js";
+const labelTimer = document.querySelector("#timer");
 export const timer = () => {
   let timer;
   const startTestTimer = function () {
     let time = 0;
     const tick = function () {
       labelTimer.style.color = "#333";
-      labelTimer.textContent = `${time} сек`;
+      if (langSelect.value === "ru") {
+        labelTimer.textContent = `${time} сек`;
+      } else if (langSelect.value === "uz") {
+        labelTimer.textContent = `${time} sek`;
+      } else {
+        labelTimer.textContent = `${time} s`;
+      }
       if (time >= 20) {
         labelTimer.style.color = "red";
       }

@@ -1,12 +1,13 @@
 "use strict";
 import { langArr } from "./translation.js";
-const langSelect = document.querySelector(".change-lang");
+export const langSelect = document.querySelector(".change-lang");
 const languages = ["ru", "en", "uz"];
 langSelect.addEventListener("change", changeURLLanguage);
-export function changeURLLanguage() {
+function changeURLLanguage() {
   let lang = langSelect.value;
   location.href = window.location.pathname + "#" + lang;
-  location.reload();
+  //location.reload();
+  changeLanguage();
 }
 
 export function changeLanguage() {
@@ -18,9 +19,11 @@ export function changeLanguage() {
     location.reload();
   }
   langSelect.value = hash;
-  // document.querySelector(".first-name").innerHTML = langArr["first-name"][hash];
   for (let key in langArr) {
-    let element = document.querySelector(`.${key}`);
+    let element = document.querySelector(`#${key}`);
+    if (langArr[key][hash] === undefined) {
+      langArr[key][hash] = langArr[key]["ru"];
+    }
     if (element) {
       element.innerHTML = langArr[key][hash];
     }

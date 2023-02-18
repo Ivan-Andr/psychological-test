@@ -54,6 +54,11 @@ export const langArr = {
     uz: "Test raqamini tanlang",
     en: "Choose test number",
   },
+  chooseNum: {
+    ru: "--выберите номер--",
+    uz: "--raqamini tanlang--",
+    en: "--choose the number--",
+  },
   formSubmit: {
     ru: "Отправить",
     uz: "Yuborish",
