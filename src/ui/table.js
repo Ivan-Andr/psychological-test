@@ -16,35 +16,19 @@ export const table = () => {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement("table");
   const tblBody = document.createElement("tbody");
-
+  shuffle(tableArr);
+  shuffle(redArray);
   // creating all cells
   for (let i = 0; i < 7; i++) {
     // creates a table row
     const row = document.createElement("tr");
 
     for (let j = 0; j < 7; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
-      // the end of the table row
       let k = i * 7 + j;
       const cell = document.createElement("td");
-      cell.setAttribute("id", `table-cell-${k}`);
-      //cell.setAttribute("id", "cellTest");
       const cellText = document.createTextNode(tableArr[k]);
       cell.appendChild(cellText);
-
-      // if (redArray.includes(k)) {
-      //   cell.className = "table_cell_red";
-
-      //   cell.addEventListener("click", function () {
-      //     console.log(`${tableArr[k]} red is clicked`);
-      //   });
-      // } else {
-      //   cell.className = "table_cell_black";
-      //   cell.addEventListener("click", function () {
-      //     console.log(`${tableArr[k]} black is clicked`);
-      //   });
-      // }
+      cell.setAttribute("id", tableArr[k]);
       if (redArray.includes(k)) {
         cell.className = "table_cell_red";
       } else {
@@ -67,3 +51,9 @@ export const table = () => {
   // sets the border attribute of tbl to '2'
   tbl.setAttribute("border", "1");
 };
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
