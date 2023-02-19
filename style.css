@@ -77,17 +77,17 @@ td:hover {
   cursor: pointer;
   font-family: inherit;
 }
-#btn--start:hover,
-#btn--next:hover {
+.btn--start:hover,
+.btn--next:hover {
   background-color: #2ecc71;
   color: #fff;
 }
 
-#btn--finish:hover {
+.btn--finish:hover {
   background-color: #e74c3c;
   color: #fff;
 }
-#btn--instruction:hover {
+.btn--instruction:hover {
   background-color: #3498db;
   color: #fff;
 }
@@ -120,11 +120,11 @@ td:hover {
   }
 }
 
-test-timer {
+.test-timer {
   font-size: 20px;
   text-align: center;
 }
-#timer {
+.timer {
   font-size: 23px;
   font-weight: bold;
   text-align: center;

@@ -57,7 +57,7 @@
         <input type="text" id="professionInput" name="profession" required />
         <label for="test-number" id="test-number">Выберите номер теста</label>
         <select name="testNumber" id="testNumber" required>
-          <option value="" id="chooseNum">--Выберите номер--</option>
+          <option id="chooseNum">--Выберите номер--</option>
           <option value="num1">1</option>
           <option value="num2">2</option>
           <option value="num3">3</option>
@@ -68,7 +68,9 @@
           <option value="num8">8</option>
         </select>
 
-        <button type="submit" id="formSubmit">Отправить</button>
+        <button type="submit" class="form-submit" id="formSubmit">
+          Отправить
+        </button>
       </form>
     </div>
     <div class="overlay-form hidden"></div>
@@ -88,20 +90,22 @@
     <article class="table--space"></article>
     <aside class="ui--space">
       <div>
-        <button class="btn" id="btn--start">Начать тест</button>
+        <button class="btn btn--start" id="btn--start">Начать тест</button>
       </div>
       <div>
-        <button class="btn" id="btn--finish">Завершить тест</button>
+        <button class="btn btn--finish" id="btn--finish">Завершить тест</button>
       </div>
       <div>
-        <p id="test-timer">⏱️ Время выполнения теста:</p>
-        <p id="timer">0</p>
+        <p class="test-timer" id="test-timer">⏱️ Время выполнения теста:</p>
+        <p class="timer" id="timer">0</p>
       </div>
       <div>
-        <button class="btn" id="btn--instruction">Инструкция к тесту</button>
+        <button class="btn btn--instruction" id="btn--instruction">
+          Инструкция к тесту
+        </button>
       </div>
       <div>
-        <button class="btn" id="btn--next">Далее</button>
+        <button class="btn btn--next" id="btn--next">Далее</button>
       </div>
     </aside>
     <footer class="footer">2023 © All rights reserved</footer>

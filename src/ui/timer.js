@@ -1,6 +1,6 @@
 "use srtict";
 import { langSelect } from "./lang.js";
-const labelTimer = document.querySelector("#timer");
+const labelTimer = document.querySelector(".timer");
 export const timer = () => {
   let timer;
   const startTestTimer = function () {
