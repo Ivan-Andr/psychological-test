@@ -2,9 +2,9 @@
 import { modal } from "./modal.js";
 import { timer } from "./timer.js";
 import { form } from "./form.js";
-const btnStart = document.querySelector(".btn--start");
-const btnFinish = document.querySelector(".btn--finish");
-const btnInstruction = document.querySelector(".btn--instruction");
+const btnStart = document.querySelector("#btn--start");
+const btnFinish = document.querySelector("#btn--finish");
+const btnInstruction = document.querySelector("#btn--instruction");
 const btnCloseInstruction = document.querySelector(".close-modal");
 const btnOpenForm = document.querySelector(".login-button");
 const btnCloseForm = document.querySelector(".close-modal-form");

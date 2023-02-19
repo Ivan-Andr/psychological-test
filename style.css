@@ -2,7 +2,7 @@
 
 body {
   background: #ecf0f1;
-  height: 100vh;
+  height: 99vh;
   display: flex;
   flex-flow: row wrap;
   text-align: center;
@@ -26,7 +26,15 @@ body > * {
 .logo {
   height: 45px;
 }
-
+.change-lang {
+  width: auto;
+  cursor: pointer;
+  background-color: #ecf0f1;
+  border: none;
+}
+.change-lang:hover {
+  background-color: #bdc3c7;
+}
 .footer {
   margin-top: auto;
 }
@@ -69,7 +77,8 @@ td:hover {
   cursor: pointer;
   font-family: inherit;
 }
-.btn--start:hover {
+.btn--start:hover,
+.btn--next:hover {
   background-color: #2ecc71;
   color: #fff;
 }
@@ -113,6 +122,11 @@ td:hover {
 
 .test-timer {
   font-size: 20px;
+  text-align: center;
+}
+.timer {
+  font-size: 23px;
+  font-weight: bold;
   text-align: center;
 }
 .modal-instruction,
@@ -191,7 +205,7 @@ select:focus {
   border-color: #0f868c;
 }
 
-.formSubmit {
+#formSubmit {
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
