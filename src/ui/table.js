@@ -31,7 +31,7 @@ function arrayFill(startElem) {
   }
 }
 //to start test with 1 - arrayFill(1), to start test with 2 - arrayFill(2) etc.
-arrayFill(1);
+arrayFill(2);
 
 export const tableSpace = document.querySelector(".table--space");
 export const uiSpace = document.querySelector(".ui--space");
@@ -40,7 +40,7 @@ export const table = () => {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement("table");
   const tblBody = document.createElement("tbody");
-  // shuffle(tableArr);
+  //shuffle(tableArr2);
   // shuffle(redArray);
   // creating all cells
   for (let i = 0; i < 7; i++) {

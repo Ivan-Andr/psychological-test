@@ -50,9 +50,9 @@ export const langArr = {
     en: " Profession",
   },
   "test-number": {
-    ru: "Выберите номер теста",
-    uz: "Test raqamini tanlang",
-    en: "Choose test number",
+    ru: "Выберите вариант таблицы",
+    uz: "Jadval variantini tanlang",
+    en: "Select table option",
   },
   chooseNum: {
     ru: "--выберите номер--",
