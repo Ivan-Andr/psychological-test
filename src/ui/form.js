@@ -5,11 +5,11 @@ const showForm = document.querySelector(".modal-form");
 const inputUserName = document.querySelector("#firstName");
 const inputUserLastName = document.querySelector("#lastName");
 const inputUserBirthYear = document.querySelector("#birthYear");
-const inputUserProfession = document.querySelector("#profession");
+const inputUserProfession = document.querySelector("#professionInput");
 const inputTestNumber = document.querySelector("#testNumber");
 const inputDataForm = document.querySelector(".userDataForm");
 
-let userObject = {
+export let userObject = {
   name: "Name",
   lastName: "Lastname",
   birthYear: 1950,
@@ -17,6 +17,7 @@ let userObject = {
   tableNumber: 0,
   testDate: new Date(),
 };
+
 export const form = function () {
   const openModalForm = function () {
     showForm.classList.remove("hidden");
@@ -47,7 +48,7 @@ export const form = function () {
     submitModalForm();
     closeModalForm();
     updateUserObject();
-    //console.log(userObject);
+    console.log(userObject);
   });
   overlayForm.addEventListener("click", closeModalForm);
   return { openModalForm, closeModalForm };
