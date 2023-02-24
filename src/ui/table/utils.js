@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * function to create array of 49 elements (25 and 24 integer numbers)
@@ -11,10 +11,10 @@ export const getBlackRedArr = function (startEl) {
   const blackArr = [];
   const redArr = [];
   for (let i = startEl; i <= 24 + startEl; i++) {
-    blackArr.push({ index: i, color: 'black' });
+    blackArr.push({ index: i, color: "black" });
   }
   for (let i = startEl; i <= 23 + startEl; i++) {
-    redArr.push({ index: i, color: 'red' });
+    redArr.push({ index: i, color: "red" });
   }
   const blackRedArr = blackArr.concat(redArr);
   return blackRedArr;
