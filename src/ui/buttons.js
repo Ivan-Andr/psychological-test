@@ -2,10 +2,13 @@
 import { modal } from "./modal.js";
 import { timer } from "./timer.js";
 import { form } from "./form.js";
+import { langSelect } from "./lang.js";
+import { langArr } from "./translation.js";
 const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
 const btnInstruction = document.querySelector("#btn--instruction");
+const btnNextStage = document.querySelector("#btn--next");
 const btnCloseInstruction = document.querySelector(".close-modal");
 export const btnOpenForm = document.querySelector(".login-button");
 const btnCloseForm = document.querySelector(".close-modal-form");
@@ -26,6 +29,10 @@ export const buttons = () => {
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
     startTestTimer();
+
+    //move to another function later
+    btnNextStage.setAttribute("disabled", true);
+    btnNextStage.style.pointerEvents = "none";
   });
 
   btnStop.addEventListener("click", function () {
@@ -39,13 +46,17 @@ export const buttons = () => {
   });
 
   btnFinish.addEventListener("click", function () {
-    if (
-      window.confirm(
-        "Вы уверены, что хотите завешить тест?\nТекущий результат будет потерян!"
-      )
-    ) {
+    let message = "";
+    if (langSelect.value === "ru") {
+      message = langArr["confirm-window-message"]["ru"];
+    } else if (langSelect.value === "uz") {
+      message = langArr["confirm-window-message"]["uz"];
+    } else {
+      message = langArr["confirm-window-message"]["en"];
+    }
+    if ((confirmWindow = window.confirm(`${message}`))) {
       location.reload();
     }
-    btnCloseInstruction.addEventListener("click", closeModal);
   });
+  btnCloseInstruction.addEventListener("click", closeModal);
 };

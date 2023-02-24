@@ -70,14 +70,19 @@ export const langArr = {
     en: "Black and red Platonov-Schulte table"
   },
   "btn--start": {
-    ru: "Начать тест",
-    uz: "Testni boshlang",
-    en: "Start test"
+    ru: "Начать выполнение задания",
+    uz: "Vazifani boshlang",
+    en: "Start task"
   },
   "btn--finish": {
     ru: "Завершить тест",
     uz: "Testni tugatish",
     en: "Finish test"
+  },
+  "btn--stop": {
+    ru: "Прервать выполнение задания",
+    uz: "Vazifani to'xtatish",
+    en: "Stop task execution"
   },
   "test-timer": {
     ru: "⏱️ Время выполнения теста:",
@@ -93,5 +98,10 @@ export const langArr = {
     ru: "К следующему заданию",
     uz: "Keyingi vazifa",
     en: "Next task"
+  },
+  "confirm-window-message": {
+    ru: "Вы хотите завершить тест?\nТекущий результат будет потерян!",
+    uz: "Testni yakunlamoqchimisiz?\nJoriy natija yo'qoladi! ",
+    en: "Do you want to complete the test?\nCurrent result will be lost!"
   }
 };
