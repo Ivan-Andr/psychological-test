@@ -1,6 +1,5 @@
-"use srtict";
-import { langSelect } from "./lang.js";
 const labelTimer = document.querySelector(".timer");
+import { langSelect } from "./lang.js";
 export const timer = () => {
   let timer;
   const startTestTimer = function () {
@@ -25,7 +24,6 @@ export const timer = () => {
       return timer;
     }
   };
-
   const stopTestTimer = function () {
     clearInterval(timer);
     timer = null;
