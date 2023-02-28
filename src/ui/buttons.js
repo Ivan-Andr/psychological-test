@@ -4,6 +4,7 @@ import { timer } from "./timer.js";
 import { form } from "./form.js";
 import { langSelect } from "./lang.js";
 import { langArr } from "./translation.js";
+import { stage1Logic } from "./logic.js";
 const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
@@ -28,8 +29,8 @@ export const buttons = () => {
   btnStart.addEventListener("click", function () {
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
+    stageLogic(1);
     startTestTimer();
-
     //move to another function later
     btnNextStage.setAttribute("disabled", true);
     btnNextStage.style.pointerEvents = "none";

@@ -1,5 +1,7 @@
 "use strict";
 
+import { stage1Logic } from "../logic.js";
+
 export const tableSpace = document.querySelector(".table--space");
 export const uiSpace = document.querySelector(".ui--space");
 
@@ -17,13 +19,17 @@ export const table = (shuffledArray) => {
       const cell = document.createElement("td");
       const cellText = document.createTextNode(shuffledArray[k].index);
       cell.appendChild(cellText);
-      cell.setAttribute("id", shuffledArray[k]);
+      cell.setAttribute("id", shuffledArray[k].index);
 
       shuffledArray[k].color === "red"
         ? (cell.className = "table_cell_red")
         : (cell.className = "table_cell_black");
       cell.addEventListener("click", (event) => {
-        console.log(`${event.target.innerText} ${event.target.className}`);
+        let clickedNumber = event.target.innerText;
+        let clickedCellClass = event.target.className;
+        stage1Logic(clickedNumber, clickedCellClass);
+
+        //console.log(`${clickedNumber} ${clickedCellClass}`);
       });
       row.appendChild(cell);
     }

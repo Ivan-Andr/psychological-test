@@ -3,6 +3,7 @@
 import { btnOpenForm } from "./buttons.js";
 import { tableSpace, uiSpace, table } from "./table/table.js";
 import { getBlackRedArr, shuffledArray } from "./table/utils.js";
+import { stage1Logic } from "./logic.js";
 const overlayForm = document.querySelector(".overlay-form");
 const showForm = document.querySelector(".modal-form");
 const inputUserName = document.querySelector("#firstName");
@@ -11,7 +12,6 @@ const inputUserBirthYear = document.querySelector("#birthYear");
 const inputUserProfession = document.querySelector("#professionInput");
 const inputTestNumber = document.querySelector("#testNumber");
 const inputDataForm = document.querySelector(".userDataForm");
-
 export let userObject = {
   name: "Name",
   lastName: "Lastname",

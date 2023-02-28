@@ -7,7 +7,7 @@
  */
 
 export const getBlackRedArr = function (startEl) {
-  console.log(startEl);
+  //console.log(startEl);
   const blackArr = [];
   const redArr = [];
   for (let i = startEl; i <= 24 + startEl; i++) {
