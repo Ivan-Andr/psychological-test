@@ -24,9 +24,11 @@ export const table = (shuffledArray) => {
       shuffledArray[k].color === "red"
         ? (cell.className = "table_cell_red")
         : (cell.className = "table_cell_black");
-      cell.addEventListener("click", (event) => {
-        let clickedNumber = event.target.innerText;
-        let clickedCellClass = event.target.className;
+      cell.addEventListener("click", () => {
+        // let clickedNumber = event.target.innerText;
+        // let clickedCellClass = event.target.className;
+        let clickedNumber = shuffledArray[k].innerText;
+        let clickedCellClass = shuffledArray[k].target.className;
         stage1Logic(clickedNumber, clickedCellClass);
 
         //console.log(`${clickedNumber} ${clickedCellClass}`);

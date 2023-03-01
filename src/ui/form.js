@@ -50,8 +50,9 @@ export const form = function () {
     closeModalForm();
     updateUserObject();
     table(shuffledArray(getBlackRedArr(Number(userObject.tableNumber))));
+    window.localStorage.setItem("user", JSON.stringify(userObject));
     btnOpenForm.style.pointerEvents = "none";
   });
   overlayForm.addEventListener("click", closeModalForm);
-  return { openModalForm, closeModalForm };
+  return { openModalForm, closeModalForm, userObject };
 };
