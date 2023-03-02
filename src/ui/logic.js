@@ -6,7 +6,10 @@ let curNum = 1;
 let stageID = 1;
 const testArray = [];
 export function stagesLogic(number, color) {
-  const startNum = Number(JSON.parse(localStorage.user).tableNumber);
+  const startNum = Number(
+    JSON.parse(window.localStorage.getItem("user")).tableNumber
+  );
+  console.log(startNum, "startNum");
   if (stageID === 1) {
     stage1Logic(number, color, startNum);
   }
