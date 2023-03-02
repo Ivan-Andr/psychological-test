@@ -4,18 +4,20 @@ import { timer } from "./timer.js";
 import { form } from "./form.js";
 import { langSelect } from "./lang.js";
 import { langArr } from "./translation.js";
-import { stage1Logic } from "./logic.js";
+import { stageReset } from "./logic.js";
+
+import { tableSpace, uiSpace } from "./table/table.js";
 const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
-const btnInstruction = document.querySelector("#btn--instruction");
+export const btnInstruction = document.querySelector("#btn--instruction");
 const btnNextStage = document.querySelector("#btn--next");
 const btnCloseInstruction = document.querySelector(".close-modal");
 export const btnOpenForm = document.querySelector(".login-button");
 const btnCloseForm = document.querySelector(".close-modal-form");
 
 const { openModal, closeModal } = modal();
-const { startTestTimer, stopTestTimer } = timer();
+export const { startTestTimer, stopTestTimer } = timer();
 const { openModalForm, closeModalForm } = form();
 
 export const startApp = () => {
@@ -29,7 +31,7 @@ export const buttons = () => {
   btnStart.addEventListener("click", function () {
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
-    stageLogic(1);
+    tableSpace.style.pointerEvents = "auto";
     startTestTimer();
     //move to another function later
     btnNextStage.setAttribute("disabled", true);
@@ -37,9 +39,10 @@ export const buttons = () => {
   });
 
   btnStop.addEventListener("click", function () {
-    stopTestTimer();
-    btnInstruction.removeAttribute("disabled");
-    btnInstruction.style.pointerEvents = "auto";
+    stageReset();
+    // stopTestTimer();
+    // btnInstruction.removeAttribute("disabled");
+    // btnInstruction.style.pointerEvents = "auto";
   });
 
   btnInstruction.addEventListener("click", function () {

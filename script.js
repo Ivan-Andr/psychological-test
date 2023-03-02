@@ -6,4 +6,3 @@ import { changeLanguage } from "./src/ui/lang.js";
 buttons();
 startApp();
 changeLanguage();
-//stageLogic(1);

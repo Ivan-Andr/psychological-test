@@ -1,16 +1,23 @@
 "use strict";
-import { userObject } from "./form.js";
-//let stageID = 1;
-const userObjectParsed = JSON.parse(localStorage.user);
-const startNum = Number(userObjectParsed.tableNumber);
-console.log(userObjectParsed);
-let curNum = startNum;
+import { stopTestTimer, btnInstruction } from "./buttons.js";
+import { labelTimer } from "./timer.js";
+import { tableSpace } from "./table/table.js";
+let curNum = 1;
+let stageID = 1;
 const testArray = [];
-export const stage1Logic = function (number, className) {
+export function stagesLogic(number, color) {
+  const startNum = Number(JSON.parse(localStorage.user).tableNumber);
+  if (stageID === 1) {
+    stage1Logic(number, color, startNum);
+  }
+}
+
+export const stage1Logic = function (number, color, startNum) {
   //CHECK if clicked cell is in correct order
+
   number = Number(number);
   if (curNum < startNum + 24) {
-    if (className === "table_cell_black") {
+    if (color === "black") {
       if (number === curNum) {
         console.log("correct");
         testArray.push(1);
@@ -21,6 +28,9 @@ export const stage1Logic = function (number, className) {
         testArray.push(3);
         curNum = number + 1;
         console.log(curNum);
+      } else if (number > curNum + 7) {
+        console.log("You skip more than 7 numbers! Stage reset!");
+        stageReset();
       } else if (number > curNum + 2) {
         let skipDelta = number - curNum;
         console.log("Skip Mistake2");
@@ -34,6 +44,9 @@ export const stage1Logic = function (number, className) {
         console.log("Return Mistake");
         testArray.push(5);
         curNum = number + 1;
+      } else if (number < curNum - 8) {
+        console.log("You returned more than 7 numbers ! Stage reset!");
+        stageReset();
       } else if (number < curNum - 4) {
         let skipDelta = curNum - number;
         console.log("Return Mistake2");
@@ -48,15 +61,17 @@ export const stage1Logic = function (number, className) {
         console.log("Double Click Mistake");
         testArray.push(4);
       }
-    } else if (className === "table_cell_red") {
+    } else if (color === "red") {
       if (number === curNum) {
         console.log("Color change mistake");
         curNum++;
         testArray.push(2);
         let colorChangeErrorArray = testArray.slice(-4);
+        console.log(colorChangeErrorArray);
         //CHECK if user changed color and carried on without correcting mistake
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
           console.log("Fatal error! Stage reset!");
+          stageReset();
         }
       } else {
         testArray.push(2);
@@ -64,6 +79,20 @@ export const stage1Logic = function (number, className) {
       }
     }
   } else if (curNum === startNum + 24 || number === startNum + 24) {
-    console.log(testArray);
+    console.log(testArray, "Stage completed!");
+    localStorage.setItem(
+      "Stage1Time",
+      JSON.stringify(`Stage 1 time ${labelTimer.textContent}`)
+    );
+    localStorage.setItem("StageMistakesArray", JSON.stringify(testArray));
+    stopTestTimer();
   }
+};
+export const stageReset = function () {
+  stopTestTimer();
+  btnInstruction.removeAttribute("disabled");
+  btnInstruction.style.pointerEvents = "auto";
+  tableSpace.style.pointerEvents = "none";
+  testArray.length = 0;
+  curNum = 1;
 };

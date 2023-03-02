@@ -1,6 +1,6 @@
 "use strict";
 
-import { stage1Logic } from "../logic.js";
+import { stagesLogic } from "../logic.js";
 
 export const tableSpace = document.querySelector(".table--space");
 export const uiSpace = document.querySelector(".ui--space");
@@ -27,9 +27,9 @@ export const table = (shuffledArray) => {
       cell.addEventListener("click", () => {
         // let clickedNumber = event.target.innerText;
         // let clickedCellClass = event.target.className;
-        let clickedNumber = shuffledArray[k].innerText;
-        let clickedCellClass = shuffledArray[k].target.className;
-        stage1Logic(clickedNumber, clickedCellClass);
+        let clickedNumber = shuffledArray[k].index;
+        let clickedCellColor = shuffledArray[k].color;
+        stagesLogic(clickedNumber, clickedCellColor);
 
         //console.log(`${clickedNumber} ${clickedCellClass}`);
       });

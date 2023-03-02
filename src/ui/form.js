@@ -3,7 +3,7 @@
 import { btnOpenForm } from "./buttons.js";
 import { tableSpace, uiSpace, table } from "./table/table.js";
 import { getBlackRedArr, shuffledArray } from "./table/utils.js";
-import { stage1Logic } from "./logic.js";
+import { stagesLogic } from "./logic.js";
 const overlayForm = document.querySelector(".overlay-form");
 const showForm = document.querySelector(".modal-form");
 const inputUserName = document.querySelector("#firstName");
@@ -29,7 +29,7 @@ export const form = function () {
 
   const submitModalForm = function () {
     tableSpace.style.opacity = 100;
-    tableSpace.style.pointerEvents = "auto";
+
     uiSpace.style.opacity = 100;
     uiSpace.style.pointerEvents = "auto";
   };
