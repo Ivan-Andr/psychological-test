@@ -1,4 +1,4 @@
-const labelTimer = document.querySelector(".timer");
+export const labelTimer = document.querySelector(".timer");
 import { langSelect } from "./lang.js";
 export const timer = () => {
   let timer;
