@@ -5,16 +5,19 @@ import { form } from "./form.js";
 import { langSelect } from "./lang.js";
 import { langArr } from "./translation.js";
 import { stageReset } from "./logic.js";
-
+export let stageID = 1;
 import { tableSpace, uiSpace } from "./table/table.js";
-const btnStart = document.querySelector("#btn--start");
+export const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
 export const btnInstruction = document.querySelector("#btn--instruction");
-const btnNextStage = document.querySelector("#btn--next");
+export const btnNextStage = document.querySelector("#btn--next");
 const btnCloseInstruction = document.querySelector(".close-modal");
 export const btnOpenForm = document.querySelector(".login-button");
 const btnCloseForm = document.querySelector(".close-modal-form");
+const instructionStage1 = document.querySelector("#instruction-stage1");
+const instructionStage2 = document.querySelector("#instruction-stage2");
+const instructionStage3 = document.querySelector("#instruction-stage3");
 
 const { openModal, closeModal } = modal();
 export const { startTestTimer, stopTestTimer } = timer();
@@ -28,24 +31,40 @@ export const startApp = () => {
 };
 
 export const buttons = () => {
+  btnNextStage.setAttribute("disabled", true);
+  btnNextStage.style.pointerEvents = "none";
   btnStart.addEventListener("click", function () {
+    const userObjectNew = JSON.parse(localStorage.getItem("user"));
+    console.log(userObjectNew);
+    const startNum = Number(userObjectNew.tableNumber);
+    //console.log(startNum);
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
     tableSpace.style.pointerEvents = "auto";
     startTestTimer();
-    //move to another function later
     btnNextStage.setAttribute("disabled", true);
     btnNextStage.style.pointerEvents = "none";
+    btnStart.setAttribute("disabled", true);
+    btnStart.style.pointerEvents = "none";
   });
 
   btnStop.addEventListener("click", function () {
     stageReset();
-    // stopTestTimer();
-    // btnInstruction.removeAttribute("disabled");
-    // btnInstruction.style.pointerEvents = "auto";
   });
 
   btnInstruction.addEventListener("click", function () {
+    openModal();
+  });
+  btnNextStage.addEventListener("click", function () {
+    stageID++;
+    console.log(stageID);
+    if (stageID === 2) {
+      instructionStage2.classList.remove("hidden");
+      instructionStage1.classList.add("hidden");
+    } else if (stageID === 3) {
+      instructionStage3.classList.remove("hidden");
+      instructionStage2.classList.add("hidden");
+    }
     openModal();
   });
 
@@ -58,7 +77,8 @@ export const buttons = () => {
     } else {
       message = langArr["confirm-window-message"]["en"];
     }
-    if ((confirmWindow = window.confirm(`${message}`))) {
+    if (window.confirm(`${message}`)) {
+      localStorage.clear();
       location.reload();
     }
   });

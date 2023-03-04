@@ -1,20 +1,33 @@
 "use strict";
-import { stopTestTimer, btnInstruction } from "./buttons.js";
+import {
+  stopTestTimer,
+  btnInstruction,
+  btnNextStage,
+  btnStart,
+  stageID,
+  buttons
+} from "./buttons.js";
 import { labelTimer } from "./timer.js";
 import { tableSpace } from "./table/table.js";
-let curNum = 1;
-let stageID = 1;
+
 const testArray = [];
+let curNum = 1;
 export function stagesLogic(number, color) {
-  const startNum = Number(JSON.parse(localStorage.user).tableNumber);
+  const userObjectNew = JSON.parse(localStorage.getItem("user"));
+  const startNum = Number(userObjectNew.tableNumber);
   if (stageID === 1) {
     stage1Logic(number, color, startNum);
   }
+  // if (stageID === 2) {
+  //   stage2Logic(number, color, startNum);
+  // }
+  // (stageID === 3) {
+  //   stage3Logic(number, color, startNum);
+  // }
 }
 
 export const stage1Logic = function (number, color, startNum) {
   //CHECK if clicked cell is in correct order
-
   number = Number(number);
   if (curNum < startNum + 24) {
     if (color === "black") {
@@ -62,17 +75,16 @@ export const stage1Logic = function (number, color, startNum) {
         testArray.push(4);
       }
     } else if (color === "red") {
+      console.log("Color change mistake");
+      testArray.push(2);
+      let colorChangeErrorArray = testArray.slice(-4);
+      console.log(colorChangeErrorArray);
+      if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
+        console.log("Fatal error! Stage reset!");
+        stageReset();
+      }
       if (number === curNum) {
-        console.log("Color change mistake");
         curNum++;
-        testArray.push(2);
-        let colorChangeErrorArray = testArray.slice(-4);
-        console.log(colorChangeErrorArray);
-        //CHECK if user changed color and carried on without correcting mistake
-        if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
-          console.log("Fatal error! Stage reset!");
-          stageReset();
-        }
       } else {
         testArray.push(2);
         console.log("Color change mistake");
@@ -86,6 +98,8 @@ export const stage1Logic = function (number, color, startNum) {
     );
     localStorage.setItem("StageMistakesArray", JSON.stringify(testArray));
     stopTestTimer();
+    btnNextStage.removeAttribute("disabled");
+    btnNextStage.style.pointerEvents = "auto";
   }
 };
 export const stageReset = function () {
@@ -93,6 +107,8 @@ export const stageReset = function () {
   btnInstruction.removeAttribute("disabled");
   btnInstruction.style.pointerEvents = "auto";
   tableSpace.style.pointerEvents = "none";
+  btnStart.removeAttribute("disabled");
+  btnStart.style.pointerEvents = "auto";
   testArray.length = 0;
   curNum = 1;
 };
