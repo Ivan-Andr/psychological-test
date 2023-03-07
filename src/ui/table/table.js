@@ -29,7 +29,7 @@ export const table = (shuffledArray) => {
         // let clickedCellClass = event.target.className;
         let clickedNumber = shuffledArray[k].index;
         let clickedCellColor = shuffledArray[k].color;
-        stagesLogic(clickedNumber, clickedCellColor);
+        stagesLogic(clickedNumber, clickedCellColor, shuffledArray);
 
         //console.log(`${clickedNumber} ${clickedCellClass}`);
       });

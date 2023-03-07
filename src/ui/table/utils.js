@@ -16,6 +16,7 @@ export const getBlackRedArr = function (startEl) {
     redArr.push({ index: i, color: "red" });
   }
   const blackRedArr = blackArr.concat(redArr);
+  window.localStorage.setItem("blackRedArr", JSON.stringify(blackRedArr));
   return blackRedArr;
 };
 
