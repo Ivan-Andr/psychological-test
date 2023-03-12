@@ -12,7 +12,7 @@ export const getBlackRedArr = function (startEl) {
   for (let i = startEl; i <= 24 + startEl; i++) {
     blackArr.push({ index: i, color: "black" });
   }
-  for (let i = startEl; i <= 23 + startEl; i++) {
+  for (let i = 23 + startEl; i >= startEl; i--) {
     redArr.push({ index: i, color: "red" });
   }
   const blackRedArr = blackArr.concat(redArr);
