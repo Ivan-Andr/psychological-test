@@ -1,0 +1,23 @@
+{
+  "name": "psychological-test",
+  "version": "1.0.0",
+  "description": "Schulte-Platonov psychology test",
+  "main": "script.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivan-Andr/psychological-test.git"
+  },
+  "author": "Ivan Levchenko",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Ivan-Andr/psychological-test/issues"
+  },
+  "homepage": "https://github.com/Ivan-Andr/psychological-test#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
