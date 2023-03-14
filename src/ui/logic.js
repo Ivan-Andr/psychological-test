@@ -37,7 +37,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
   //CHECK if clicked cell is in correct order
   number = Number(number);
 
-  if (arr[curElement1].index < startNum + 24) {
+  if (curElement1 < 25) {
     if (color === "black") {
       if (number === arr[curElement1].index) {
         console.log("correct");
@@ -64,17 +64,6 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
         }
         curElement1 = index + 1;
         console.log(arr[curElement1].index);
-      } else if (curElement1 >= 2) {
-        if (
-          number === arr[curElement1 - 2].index ||
-          number === arr[curElement1 - 3].index
-        ) {
-          //CHECK if clicked cell is less than order number
-          console.log("Return Mistake");
-          testArray.push(5);
-          curElement1 = index + 1;
-          console.log(arr[curElement1].index);
-        }
       } else if (curElement1 >= 7 && number < arr[curElement1 - 7].index) {
         console.log("You returned more than 7 numbers ! Stage reset!");
         stageReset();
@@ -86,6 +75,17 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
         }
         curElement1 = index + 1;
         console.log(arr[curElement1].index);
+      } else if (curElement1 >= 2) {
+        if (
+          number === arr[curElement1 - 2].index ||
+          number === arr[curElement1 - 3].index
+        ) {
+          //CHECK if clicked cell is less than order number
+          console.log("Return Mistake");
+          testArray.push(5);
+          curElement1 = index + 1;
+          console.log(arr[curElement1].index);
+        }
       } else if (number === arr[curElement1 - 1].index) {
         //CHECK user did doubleclick on one number
         console.log("Double Click Mistake");
@@ -93,7 +93,8 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       }
     } else if (color === "red") {
       if (number === arr[curElement1].index) {
-        curElement1 = index + 1;
+        curElement1 = 48 - index + 1;
+        console.log(arr[curElement1].index);
         console.log("Color change mistake");
         testArray.push(2);
       } else {
@@ -107,10 +108,8 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
         stageReset();
       }
     }
-  } else if (
-    arr[curElement1].index === startNum + 24 ||
-    number === startNum + 24
-  ) {
+  }
+  if (number === startNum + 24 || curElement1 === 25) {
     console.log(testArray, "Stage completed!");
     localStorage.setItem(
       "Stage1Time",
@@ -126,32 +125,50 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
 export const stage2Logic = function (number, color, index, startNum, arr) {
   //CHECK if clicked cell is in correct order
   number = Number(number);
-  console.log(number, curElement2);
+  console.log(number, arr[curElement2].index);
   if (arr[curElement2].index <= startNum) {
     if (color === "red") {
       if (number === arr[curElement2].index) {
+        curElement2++;
         console.log("correct");
         testArray.push(1);
-        curElement2++;
+        console.log("cor");
+      } else if (number === arr[curElement2 - 1].index) {
+        //CHECK user did doubleclick on one number
+        console.log("Double Click Mistake");
+        testArray.push(4);
       } else if (
         number === arr[curElement2 + 1].index ||
         number === arr[curElement2 + 2].index
       ) {
         //CHECK if clicked cell is greater than order number
-        console.log("Skip Mistake");
         testArray.push(3);
         curElement2 = index + 1;
-        console.log(arr[curElement2].index);
+        console.log("Skip Mistake");
+        // console.log(arr[curElement2].index);
       } else if (curElement2 < 42 && number < arr[curElement2 + 7].index) {
         console.log("You skip more than 7 numbers! Stage reset!");
         stageReset();
+        console.log("no iter");
       } else if (number < arr[curElement2 + 2].index) {
         let skipDelta = number - arr[curElement2].index;
-        console.log("Skip Mistake2");
         for (let k = 0; k < skipDelta; k++) {
           testArray.push(3);
         }
         curElement2 = index + 1;
+        console.log("Skip Mistake2");
+        // console.log(arr[curElement2].index);
+      } else if (curElement2 >= 31 && number > arr[curElement2 - 7].index) {
+        console.log("You returned more than 7 numbers ! Stage reset!");
+        stageReset();
+        console.log("no iter");
+      } else if (curElement2 >= 28 && number >= arr[curElement2 - 4].index) {
+        let skipDelta = number - arr[curElement2].index;
+        for (let k = 0; k < skipDelta; k++) {
+          testArray.push(5);
+        }
+        curElement2 = index + 1;
+        console.log("Return Mistake2");
         console.log(arr[curElement2].index);
       } else if (curElement2 >= 27) {
         if (
@@ -159,26 +176,11 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
           number === arr[curElement2 - 3].index
         ) {
           //CHECK if clicked cell is less than order number
-          console.log("Return Mistake");
           testArray.push(5);
           curElement2 = index + 1;
-          console.log(curElement2);
+          console.log("Return Mistake");
+          console.log(arr[curElement2].index);
         }
-      } else if (curElement2 >= 31 && number > arr[curElement2 - 7].index) {
-        console.log("You returned more than 7 numbers ! Stage reset!");
-        stageReset();
-      } else if (curElement2 >= 28 && number > arr[curElement2 - 4].index) {
-        let skipDelta = number - arr[curElement2].index;
-        console.log("Return Mistake2");
-        for (let k = 0; k < skipDelta; k++) {
-          testArray.push(5);
-        }
-        curElement2 = index + 1;
-        console.log(arr[curElement2].index);
-      } else if (number === arr[curElement2 - 1].index) {
-        //CHECK user did doubleclick on one number
-        console.log("Double Click Mistake");
-        testArray.push(4);
       }
     } else if (color === "black") {
       if (number === arr[curElement2].index) {
@@ -196,10 +198,8 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
         stageReset();
       }
     }
-  } else if (
-    arr[curElement2].index === startNum - 23 ||
-    number === startNum - 23
-  ) {
+  }
+  if (number === startNum - 23 || curElement2 === 49) {
     console.log(testArray, "Stage completed!");
     localStorage.setItem(
       "Stage2Time",
