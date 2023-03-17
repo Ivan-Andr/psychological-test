@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Ivan-Andr/psychological-test#readme",
   "devDependencies": {
-    "jest": "^29.5.0"
+    "install": "^0.13.0",
+    "jest": "^29.5.0",
+    "npm": "^9.6.2"
   }
 }

@@ -29,9 +29,9 @@ export function stagesLogic(number, color) {
     const startNum2 = sampleArr[25].index;
     stage2Logic(number, color, index, startNum2, sampleArr);
   }
-  // (stageID === 3) {
-  //   stage3Logic(number, color, startNum);
-  // }
+  if (stageID === 3) {
+    stage3Logic(number, color, index, startNum, sampleArr);
+  }
 }
 export const stage1Logic = function (number, color, index, startNum, arr) {
   //CHECK if clicked cell is in correct order
@@ -161,7 +161,6 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       } else if (curElement2 >= 31 && number > arr[curElement2 - 7].index) {
         console.log("You returned more than 7 numbers ! Stage reset!");
         stageReset();
-        console.log("no iter");
       } else if (curElement2 >= 28 && number >= arr[curElement2 - 4].index) {
         let skipDelta = number - arr[curElement2].index;
         for (let k = 0; k < skipDelta; k++) {
@@ -194,7 +193,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       let colorChangeErrorArray = testArray.slice(-4);
       console.log(colorChangeErrorArray);
       if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
-        console.log("Fatal error! Stage reset!");
+        console.log("Color changr error! Stage reset!");
         stageReset();
       }
     }
@@ -222,3 +221,5 @@ export const stageReset = function () {
   curElement1 = 0;
   curElement2 = 25;
 };
+
+export const stage3Logic = function (number, color, index, startNum, arr) {};
