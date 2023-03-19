@@ -56,7 +56,7 @@ export const buttons = () => {
     openModal();
   });
   btnNextStage.addEventListener("click", function () {
-    stageID++;
+    if (stageID < 3) stageID++;
     console.log(stageID);
     if (stageID === 2) {
       instructionStage2.classList.remove("hidden");
