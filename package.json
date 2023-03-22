@@ -4,7 +4,8 @@
   "description": "Schulte-Platonov psychology test",
   "main": "script.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "eslint": "eslint *.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,11 @@
   },
   "homepage": "https://github.com/Ivan-Andr/psychological-test#readme",
   "devDependencies": {
+    "eslint": "^8.36.0",
     "install": "^0.13.0",
     "jest": "^29.5.0",
-    "npm": "^9.6.2"
-  }
+    "npm": "^9.6.2",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": "eslint"
 }

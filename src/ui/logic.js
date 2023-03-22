@@ -4,13 +4,14 @@ import {
   btnInstruction,
   btnNextStage,
   btnStart,
-  stageID,
-  buttons
+  stageID
 } from "./buttons.js";
 import { labelTimer } from "./timer.js";
 import { tableSpace } from "./table/table.js";
 let curElement1 = 0;
 let curElement2 = 25;
+let startNum1;
+let startNum2;
 const testArray = [];
 let stage3status = "blackIncrease"; //// 'redDecrease'
 export function stagesLogic(number, color) {

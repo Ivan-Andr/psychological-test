@@ -5,8 +5,8 @@ import { form } from "./form.js";
 import { langSelect } from "./lang.js";
 import { langArr } from "./translation.js";
 import { stageReset } from "./logic.js";
-export let stageID = 1;
-import { tableSpace, uiSpace } from "./table/table.js";
+export let stageID = 3;
+import { tableSpace } from "./table/table.js";
 export const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
@@ -34,10 +34,6 @@ export const buttons = () => {
   btnNextStage.setAttribute("disabled", true);
   btnNextStage.style.pointerEvents = "none";
   btnStart.addEventListener("click", function () {
-    const userObjectNew = JSON.parse(localStorage.getItem("user"));
-    console.log(userObjectNew);
-    const startNum = Number(userObjectNew.tableNumber);
-    //console.log(startNum);
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
     tableSpace.style.pointerEvents = "auto";
