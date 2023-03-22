@@ -5,7 +5,8 @@
   "main": "script.js",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
-    "eslint": "eslint *.js"
+    "lint": "eslint ./src --fix",
+    "precommit": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -30,16 +31,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run precommit"
     }
-  },
-  "lint-staged": {
-    "*.{js}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.{html,css,less,ejs}": [
-      "prettier --write"
-    ]
   }
 }
