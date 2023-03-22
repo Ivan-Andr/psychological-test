@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 body {
   background: #ecf0f1;
@@ -7,7 +7,7 @@ body {
   flex-flow: row wrap;
   text-align: center;
   justify-content: center;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 body > * {
   flex: 1 100%;
@@ -178,8 +178,8 @@ form {
   padding: 16px;
   border: 1px solid #0f868c;
 }
-input[type='text'],
-input[type='number'],
+input[type="text"],
+input[type="number"],
 select {
   background-color: #ffffff;
   border: 1px solid #e5e5e4;

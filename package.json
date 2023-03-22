@@ -46,7 +46,7 @@
       "git add"
     ],
     "*.{html,css,less,ejs}": [
-      "format"
+      "npm run format"
     ]
   }
 }
