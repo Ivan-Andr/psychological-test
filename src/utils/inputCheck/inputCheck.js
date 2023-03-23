@@ -1,3 +1,6 @@
+/* eslint-disable */
+//TODO remove the line above
+
 export const stage2Logic = function (number, curElement2, color, index, startNum, arr) {
   //CHECK if clicked cell is in correct order
   if (arr[curElement2].index <= startNum) {
@@ -27,7 +30,7 @@ export const stage2Logic = function (number, curElement2, color, index, startNum
         }
         return { inputArray: testArray, curElement2: index + 1 };
         // curElement2 = index + 1;
-        // console.log(arr[curElement2].index)
+        // console.log(arr[curElement2].index);
       } else if (curElement2 >= 27) {
         if (number === arr[curElement2 - 2].index || number === arr[curElement2 - 3].index) {
           //CHECK if clicked cell is less than order number
