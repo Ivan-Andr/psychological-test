@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Comatible" content="ie = edge" />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="/src/assets/page-ico.ico" />
-    <title id="page-name">
-      Тест на определение скорости переключения внимания
-    </title>
+    <title id="page-name">Тест на определение скорости переключения внимания</title>
   </head>
   <body>
     <script type="module" src="script.js"></script>
@@ -16,23 +14,19 @@
       <button class="close-modal">&times;</button>
       <h2 id="instruction-header">❗ Инструкция по выполнению теста</h2>
       <p class="instruction" id="instruction-stage1">
-        Задание 1. Сейчас Вы должны находить числа только черного цвета в
-        порядке возрастания, начиная с 1 и заканчивая 25. Необходимо стараться
-        работать быстро и безошибочно. Если задача понятна, попробуйте выполнить
-        ее на таблице.
+        Задание 1. Сейчас Вы должны находить числа только черного цвета в порядке возрастания, начиная с 1 и заканчивая
+        25. Необходимо стараться работать быстро и безошибочно. Если задача понятна, попробуйте выполнить ее на таблице.
       </p>
       <p class="instruction hidden" id="instruction-stage2">
-        Задание 2. Сейчас Вы должны находить числа только красного цвета в
-        порядке убывания, начиная с 24 и заканчивая 1.
+        Задание 2. Сейчас Вы должны находить числа только красного цвета в порядке убывания, начиная с 24 и заканчивая
+        1.
       </p>
       <p class="insruction hidden" id="instruction-stage3">
-        Задание 3. "Сейчас Вы должны одновременно находить и черные, и красные
-        числа, чередуя их в следующем порядке: 1 черная - 24 красная, 2 черная -
-        23 красная, 3 черная - 22 красная и т.д., т.е. цифры черного цвета
-        нарастают (как в первом задании), а цифры красного цвета убывают (как во
-        втором задании). Закончить Вы должны самой маленькой красной и самой
-        большой черной цифрой, т.е. 1кр. - 25чер. Задание необходимо довести до
-        конца, не прерывая его".
+        Задание 3. "Сейчас Вы должны одновременно находить и черные, и красные числа, чередуя их в следующем порядке: 1
+        черная - 24 красная, 2 черная - 23 красная, 3 черная - 22 красная и т.д., т.е. цифры черного цвета нарастают
+        (как в первом задании), а цифры красного цвета убывают (как во втором задании). Закончить Вы должны самой
+        маленькой красной и самой большой черной цифрой, т.е. 1кр. - 25чер. Задание необходимо довести до конца, не
+        прерывая его".
       </p>
     </div>
     <div class="overlay-instruction hidden"></div>
@@ -46,14 +40,7 @@
         <label for="last-name" id="last-name">Фамилия</label>
         <input type="text" id="lastName" name="last-name" required />
         <label for="birth-year" id="birth-year">Год рождения</label>
-        <input
-          type="number"
-          max="2023"
-          min="1923"
-          id="birthYear"
-          name="birth-year"
-          required
-        />
+        <input type="number" max="2023" min="1923" id="birthYear" name="birth-year" required />
         <label for="profession" id="profession">Специальность</label>
         <input type="text" id="professionInput" name="profession" required />
         <label for="test-number" id="test-number">Выберите номер теста</label>
@@ -64,9 +51,7 @@
           <option value="3">3</option>
         </select>
 
-        <button type="submit" class="form-submit" id="formSubmit">
-          Отправить
-        </button>
+        <button type="submit" class="form-submit" id="formSubmit">Отправить</button>
       </form>
     </div>
     <div class="overlay-form hidden"></div>
@@ -89,18 +74,14 @@
         <button class="btn btn--start" id="btn--start">Начать тест</button>
       </div>
       <div>
-        <button class="btn btn--stop" id="btn--stop">
-          Прервать выполнение задания
-        </button>
+        <button class="btn btn--stop" id="btn--stop">Прервать выполнение задания</button>
       </div>
       <div>
         <p class="test-timer" id="test-timer">⏱️ Время выполнения теста:</p>
         <p class="timer" id="timer">0</p>
       </div>
       <div>
-        <button class="btn btn--instruction" id="btn--instruction">
-          Инструкция к тесту
-        </button>
+        <button class="btn btn--instruction" id="btn--instruction">Инструкция к тесту</button>
       </div>
       <div>
         <button class="btn btn--next" id="btn--next">Далее</button>

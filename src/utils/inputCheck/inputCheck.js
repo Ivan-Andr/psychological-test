@@ -1,11 +1,4 @@
-export const stage2Logic = function (
-  number,
-  curElement2,
-  color,
-  index,
-  startNum,
-  arr
-) {
+export const stage2Logic = function (number, curElement2, color, index, startNum, arr) {
   //CHECK if clicked cell is in correct order
   if (arr[curElement2].index <= startNum) {
     if (color === "red") {
@@ -14,10 +7,7 @@ export const stage2Logic = function (
         return { inputArray: [1], curElement2: curElement2++ };
         // testArray.push(1);
         // curElement2++;
-      } else if (
-        number === arr[curElement2 + 1].index ||
-        number === arr[curElement2 + 2].index
-      ) {
+      } else if (number === arr[curElement2 + 1].index || number === arr[curElement2 + 2].index) {
         //CHECK if clicked cell is greater than order number
         console.log("Skip Mistake");
         return { inputArray: [3], curElement2: index + 1 };
@@ -37,12 +27,9 @@ export const stage2Logic = function (
         }
         return { inputArray: testArray, curElement2: index + 1 };
         // curElement2 = index + 1;
-        // console.log(arr[curElement2].index);
+        // console.log(arr[curElement2].index)
       } else if (curElement2 >= 27) {
-        if (
-          number === arr[curElement2 - 2].index ||
-          number === arr[curElement2 - 3].index
-        ) {
+        if (number === arr[curElement2 - 2].index || number === arr[curElement2 - 3].index) {
           //CHECK if clicked cell is less than order number
           console.log("Return Mistake");
           testArray.push(5);
@@ -81,15 +68,9 @@ export const stage2Logic = function (
         stageReset();
       }
     }
-  } else if (
-    arr[curElement2].index === startNum - 23 ||
-    number === startNum - 23
-  ) {
+  } else if (arr[curElement2].index === startNum - 23 || number === startNum - 23) {
     console.log(testArray, "Stage completed!");
-    localStorage.setItem(
-      "Stage2Time",
-      JSON.stringify(`Stage 2 time ${labelTimer.textContent}`)
-    );
+    localStorage.setItem("Stage2Time", JSON.stringify(`Stage 2 time ${labelTimer.textContent}`));
     localStorage.setItem("Stage2MistakesArray", JSON.stringify(testArray));
     stopTestTimer();
     btnNextStage.removeAttribute("disabled");

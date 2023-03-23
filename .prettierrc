@@ -4,5 +4,5 @@
   "semi": true,
   "singleQuote": false,
   "arrowParens": "always",
-  "html.format.wrapLineLength": 120
+  "printWidth": 120
 }

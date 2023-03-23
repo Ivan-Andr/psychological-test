@@ -1,11 +1,5 @@
 "use strict";
-import {
-  stopTestTimer,
-  btnInstruction,
-  btnNextStage,
-  btnStart,
-  stageID
-} from "./buttons.js";
+import { stopTestTimer, btnInstruction, btnNextStage, btnStart, stageID } from "./buttons.js";
 import { labelTimer } from "./timer.js";
 import { tableSpace } from "./table/table.js";
 let curElement1 = 0;
@@ -65,10 +59,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       testArray.push(1);
       curElement1++;
       console.log(arr[curElement1].index);
-    } else if (
-      number === arr[curElement1 + 1].index ||
-      number === arr[curElement1 + 2].index
-    ) {
+    } else if (number === arr[curElement1 + 1].index || number === arr[curElement1 + 2].index) {
       //CHECK if clicked cell is greater than order number
       console.log("Skip Mistake");
       testArray.push(3);
@@ -97,10 +88,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       curElement1 = index + 1;
       console.log(arr[curElement1].index);
     } else if (curElement1 >= 2) {
-      if (
-        number === arr[curElement1 - 2].index ||
-        number === arr[curElement1 - 3].index
-      ) {
+      if (number === arr[curElement1 - 2].index || number === arr[curElement1 - 3].index) {
         //CHECK if clicked cell is less than order number
         console.log("Return Mistake");
         testArray.push(5);
@@ -116,10 +104,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
   if (stageID === 1) {
     if (number === startNum + 24 || curElement1 === 25) {
       console.log(testArray, "Stage completed!");
-      localStorage.setItem(
-        "Stage1Time",
-        JSON.stringify(`Stage 1 time ${labelTimer.textContent}`)
-      );
+      localStorage.setItem("Stage1Time", JSON.stringify(`Stage 1 time ${labelTimer.textContent}`));
       localStorage.setItem("Stage1MistakesArray", JSON.stringify(testArray));
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
@@ -157,10 +142,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       //CHECK user did doubleclick on one number
       console.log("Double Click Mistake");
       testArray.push(4);
-    } else if (
-      number === arr[curElement2 + 1].index ||
-      number === arr[curElement2 + 2].index
-    ) {
+    } else if (number === arr[curElement2 + 1].index || number === arr[curElement2 + 2].index) {
       //CHECK if clicked cell is greater than order number
       testArray.push(3);
       curElement2 = index + 1;
@@ -190,10 +172,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       console.log("Return Mistake2");
       console.log(arr[curElement2].index);
     } else if (curElement2 >= 27) {
-      if (
-        number === arr[curElement2 - 2].index ||
-        number === arr[curElement2 - 3].index
-      ) {
+      if (number === arr[curElement2 - 2].index || number === arr[curElement2 - 3].index) {
         //CHECK if clicked cell is less than order number
         testArray.push(5);
         curElement2 = index + 1;
@@ -205,10 +184,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
   if (stageID === 2) {
     if (number === startNum - 23 || curElement2 === 49) {
       console.log(testArray, "Stage completed!");
-      localStorage.setItem(
-        "Stage2Time",
-        JSON.stringify(`Stage 2 time ${labelTimer.textContent}`)
-      );
+      localStorage.setItem("Stage2Time", JSON.stringify(`Stage 2 time ${labelTimer.textContent}`));
       localStorage.setItem("Stage2MistakesArray", JSON.stringify(testArray));
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
@@ -241,15 +217,9 @@ export const stage3Logic = function (number, color, index, sampleArr) {
     const startNum2 = sampleArr[25].index;
     stage2Logic(number, color, index, startNum2, sampleArr);
     stage3status = "blackIncrease";
-  } else if (
-    (number === startNum2 - 23 || curElement2 === 49) &&
-    (number === startNum1 + 24 || curElement1 === 25)
-  ) {
+  } else if ((number === startNum2 - 23 || curElement2 === 49) && (number === startNum1 + 24 || curElement1 === 25)) {
     console.log("Test complete");
-    localStorage.setItem(
-      "Stage2Time",
-      JSON.stringify(`Stage 2 time ${labelTimer.textContent}`)
-    );
+    localStorage.setItem("Stage2Time", JSON.stringify(`Stage 2 time ${labelTimer.textContent}`));
     localStorage.setItem("Stage3MistakesArray", JSON.stringify(testArray));
     stopTestTimer();
   }
