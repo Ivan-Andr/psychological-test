@@ -1,0 +1,54 @@
+{
+  "name": "psychological-test",
+  "version": "1.0.0",
+  "description": "Schulte-Platonov psychology test",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --dist-dir ./dist",
+    "test": "jest --verbose -c jest.config.js",
+    "lint": "eslint . --fix",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ivan-Andr/psychological-test.git"
+  },
+  "author": "Ivan Levchenko",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ivan-Andr/psychological-test/issues"
+  },
+  "homepage": "https://github.com/Ivan-Andr/psychological-test#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.5.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^4.3.8",
+    "install": "^0.13.0",
+    "jest": "^29.5.0",
+    "lint-staged": "^13.2.0",
+    "npm": "^9.6.2",
+    "parcel": "^2.8.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.8.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js, css, md}": [
+      "npm run lint",
+      "npm run format"
+    ],
+    "*.{html,css}": [
+      "npm run format"
+    ]
+  }
+}
