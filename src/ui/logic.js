@@ -54,7 +54,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
         console.log("Color change mistake");
         index = 48 - index;
       }
-      if (stageID === 2) {
+      if (stageID === 1) {
         let colorChangeErrorArray = testArray.slice(-4);
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
@@ -96,6 +96,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       for (let k = 0; k < skipDelta; k++) {
         testArray.push(3);
       }
+      console.log(testArray);
       curElement1 = index + 1;
       console.log(arr[curElement1].index);
     } else if (curElement1 >= 7 && number < arr[curElement1 - 7].index) {
@@ -156,7 +157,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
         console.log("Color change mistake");
         index = 48 - index;
       }
-      if (stageID === 1) {
+      if (stageID === 2) {
         let colorChangeErrorArray = testArray.slice(-4);
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
@@ -194,12 +195,12 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
     } else if (curElement2 < 42 && number <= arr[curElement2 + 7].index) {
       console.log("You skip more than 7 numbers! Stage reset!");
       stageReset();
-      console.log("no iter");
     } else if (number < arr[curElement2 + 2].index) {
-      let skipDelta = number - arr[curElement2].index;
+      let skipDelta = arr[curElement2].index - number;
       for (let k = 0; k < skipDelta; k++) {
         testArray.push(3);
       }
+      console.log(testArray);
       curElement2 = index + 1;
       console.log("Skip Mistake2");
       // console.log(arr[curElement2].index);
