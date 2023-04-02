@@ -128,7 +128,10 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
     }
   }
   if (stageID === 1) {
-    if (number === startNum + 24 || curElement1 === 25) {
+    if (
+      (number === startNum + 24 && testArray.length > 10) ||
+      curElement1 === 25
+    ) {
       console.log(testArray, "Stage completed!");
       localStorage.setItem(
         "Stage1Time",
@@ -138,6 +141,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
       btnNextStage.style.pointerEvents = "auto";
+      tableSpace.style.pointerEvents = "none";
     }
   }
 };
@@ -229,7 +233,10 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
     }
   }
   if (stageID === 2) {
-    if (number === startNum - 23 || curElement2 === 49) {
+    if (
+      (number === startNum - 23 && testArray.length > 10) ||
+      curElement2 === 49
+    ) {
       console.log(testArray, "Stage completed!");
       localStorage.setItem(
         "Stage2Time",
@@ -264,14 +271,20 @@ export const stage3Logic = function (number, color, index, sampleArr) {
   if (stage3status === "blackIncrease") {
     stage1Logic(number, color, index, startNum1, sampleArr);
     if (!redDecrease) stage3status = "redDecrease";
-    if (number === startNum1 + 24 || curElement1 === 25) {
+    if (
+      (number === startNum1 + 24 && testArray.length > 10) ||
+      curElement1 === 25
+    ) {
       blackIncrease = true;
       console.log(blackIncrease);
     }
   } else if (stage3status === "redDecrease") {
     stage2Logic(number, color, index, startNum2, sampleArr);
     if (!blackIncrease) stage3status = "blackIncrease";
-    if (number === startNum2 - 23 || curElement2 === 49) {
+    if (
+      (number === startNum2 - 23 && testArray.length > 10) ||
+      curElement2 === 49
+    ) {
       redDecrease = true;
       console.log(redDecrease);
     }
@@ -284,5 +297,7 @@ export const stage3Logic = function (number, color, index, sampleArr) {
     );
     localStorage.setItem("Stage3MistakesArray", JSON.stringify(testArray));
     stopTestTimer();
+    redDecrease = false;
+    blackIncrease = false;
   }
 };

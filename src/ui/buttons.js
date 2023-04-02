@@ -6,10 +6,11 @@ import { langSelect } from "./lang.js";
 import { langArr } from "./translation.js";
 import { stageReset } from "./logic.js";
 export let stageID = 1;
-import { tableSpace, uiSpace } from "./table/table.js";
+import { tableSpace } from "./table/table.js";
 export const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
+const btnResult = document.querySelector("#btn--result");
 export const btnInstruction = document.querySelector("#btn--instruction");
 export const btnNextStage = document.querySelector("#btn--next");
 const btnCloseInstruction = document.querySelector(".close-modal");
@@ -33,6 +34,8 @@ export const startApp = () => {
 export const buttons = () => {
   btnNextStage.setAttribute("disabled", true);
   btnNextStage.style.pointerEvents = "none";
+  btnResult.setAttribute("disabled", true);
+  btnResult.style.pointerEvents = "none";
   btnStart.addEventListener("click", function () {
     const userObjectNew = JSON.parse(localStorage.getItem("user"));
     console.log(userObjectNew);
@@ -81,6 +84,9 @@ export const buttons = () => {
       localStorage.clear();
       location.reload();
     }
+  });
+  btnResult.addEventListener("click", function () {
+    console.log("Show result");
   });
   btnCloseInstruction.addEventListener("click", closeModal);
 };
