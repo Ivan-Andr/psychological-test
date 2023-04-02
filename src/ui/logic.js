@@ -5,8 +5,10 @@ import {
   btnNextStage,
   btnStart,
   stageID,
+  btnResult,
   buttons
 } from "./buttons.js";
+
 import { labelTimer } from "./timer.js";
 import { tableSpace } from "./table/table.js";
 let curElement1 = 0;
@@ -299,5 +301,7 @@ export const stage3Logic = function (number, color, index, sampleArr) {
     stopTestTimer();
     redDecrease = false;
     blackIncrease = false;
+    btnResult.removeAttribute("disabled");
+    btnResult.style.pointerEvents = "auto";
   }
 };

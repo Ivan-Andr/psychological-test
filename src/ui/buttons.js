@@ -7,10 +7,11 @@ import { langArr } from "./translation.js";
 import { stageReset } from "./logic.js";
 export let stageID = 1;
 import { tableSpace } from "./table/table.js";
+import { showResult } from "./result.js";
 export const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
-const btnResult = document.querySelector("#btn--result");
+export const btnResult = document.querySelector("#btn--result");
 export const btnInstruction = document.querySelector("#btn--instruction");
 export const btnNextStage = document.querySelector("#btn--next");
 const btnCloseInstruction = document.querySelector(".close-modal");
@@ -87,6 +88,7 @@ export const buttons = () => {
   });
   btnResult.addEventListener("click", function () {
     console.log("Show result");
+    showResult();
   });
   btnCloseInstruction.addEventListener("click", closeModal);
 };

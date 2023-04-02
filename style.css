@@ -132,7 +132,8 @@ td:hover {
   text-align: center;
 }
 .modal-instruction,
-.modal-form {
+.modal-form,
+.modal-result {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -147,7 +148,8 @@ td:hover {
 }
 
 .overlay-instruction,
-.overlay-form {
+.overlay-form,
+.overlay-result {
   position: absolute;
   top: 0;
   left: 0;
@@ -162,7 +164,8 @@ td:hover {
   display: none;
 }
 .close-modal,
-.close-modal-form {
+.close-modal-form,
+.close-modal-result {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
