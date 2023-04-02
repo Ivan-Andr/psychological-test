@@ -39,7 +39,7 @@ export const buttons = () => {
   btnResult.style.pointerEvents = "none";
   btnStart.addEventListener("click", function () {
     const userObjectNew = JSON.parse(localStorage.getItem("user"));
-    console.log(userObjectNew);
+    //console.log(userObjectNew);
     const startNum = Number(userObjectNew.tableNumber);
     //console.log(startNum);
     btnInstruction.setAttribute("disabled", true);
@@ -50,6 +50,7 @@ export const buttons = () => {
     btnNextStage.style.pointerEvents = "none";
     btnStart.setAttribute("disabled", true);
     btnStart.style.pointerEvents = "none";
+    //showResult();
   });
 
   btnStop.addEventListener("click", function () {
