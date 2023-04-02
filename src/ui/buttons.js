@@ -38,10 +38,6 @@ export const buttons = () => {
   btnResult.setAttribute("disabled", true);
   btnResult.style.pointerEvents = "none";
   btnStart.addEventListener("click", function () {
-    const userObjectNew = JSON.parse(localStorage.getItem("user"));
-    console.log(userObjectNew);
-    const startNum = Number(userObjectNew.tableNumber);
-    //console.log(startNum);
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
     tableSpace.style.pointerEvents = "auto";
