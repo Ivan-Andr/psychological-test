@@ -21,9 +21,7 @@ export const table = (shuffledArray) => {
       cell.appendChild(cellText);
       cell.setAttribute("id", shuffledArray[k].index);
 
-      shuffledArray[k].color === "red"
-        ? (cell.className = "table_cell_red")
-        : (cell.className = "table_cell_black");
+      shuffledArray[k].color === "red" ? (cell.className = "table_cell_red") : (cell.className = "table_cell_black");
       cell.addEventListener("click", () => {
         // let clickedNumber = event.target.innerText;
         // let clickedCellClass = event.target.className;
