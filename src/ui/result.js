@@ -9,14 +9,20 @@ export const showResult = function () {
   const stage1Array = JSON.parse(window.localStorage.getItem("Stage1MistakesArray"));
   const stage2Array = JSON.parse(window.localStorage.getItem("Stage2MistakesArray"));
   const stage3Array = JSON.parse(window.localStorage.getItem("Stage3MistakesArray"));
+  const stage1Time = JSON.parse(window.localStorage.getItem("Stage1Time"));
+  const stage2Time = JSON.parse(window.localStorage.getItem("Stage2Time"));
+  const stage3Time = JSON.parse(window.localStorage.getItem("Stage3Time"));
   const userData = `${userObj.lastName} ${userObj.name} \n
   Год рождения: ${userObj.birthYear} \n
   Профессия: ${userObj.profession} \n
   Вариант таблицы: ${userObj.tableNumber} \n
   Дата тестирования: ${userObj.testDate} \n
   Массив ошибок 1 задания: ${stage1Array} \n
+  Время:${stage1Time} \n \n
   Массив ошибок 2 задания: ${stage2Array} \n
-  Массив ошибок 3 задания: ${stage3Array} \n`;
+  Время:${stage2Time} \n \n
+  Массив ошибок 3 задания: ${stage3Array} \n
+  Время: ${stage3Time} \n`;
   modalResult.classList.remove("hidden");
   overlayResult.classList.remove("hidden");
   btnCloseResult.addEventListener("click", closeResultModal);

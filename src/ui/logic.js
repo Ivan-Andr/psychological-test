@@ -117,7 +117,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
   if (stageID === 1) {
     if ((number === startNum + 24 && testArray.length > 10) || curElement1 === 25) {
       console.log(testArray, "Stage completed!");
-      localStorage.setItem("Stage1Time", JSON.stringify(`Stage 1 time ${labelTimer.textContent}`));
+      localStorage.setItem("Stage1Time", JSON.stringify(`Stage 1 time: ${labelTimer.textContent}`));
       localStorage.setItem("Stage1MistakesArray", JSON.stringify(testArray));
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
@@ -207,7 +207,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
   if (stageID === 2) {
     if ((number === startNum - 23 && testArray.length > 10) || curElement2 === 49) {
       console.log(testArray, "Stage completed!");
-      localStorage.setItem("Stage2Time", JSON.stringify(`Stage 2 time ${labelTimer.textContent}`));
+      localStorage.setItem("Stage2Time", JSON.stringify(`Stage 2 time: ${labelTimer.textContent}`));
       localStorage.setItem("Stage2MistakesArray", JSON.stringify(testArray));
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
@@ -251,7 +251,7 @@ export const stage3Logic = function (number, color, index, sampleArr) {
   }
   if (redDecrease && blackIncrease) {
     console.log("Test complete");
-    localStorage.setItem("Stage3Time", JSON.stringify(`Stage 3 time ${labelTimer.textContent}`));
+    localStorage.setItem("Stage3Time", JSON.stringify(`Stage 3 time: ${labelTimer.textContent}`));
     localStorage.setItem("Stage3MistakesArray", JSON.stringify(testArray));
     stopTestTimer();
     redDecrease = false;
