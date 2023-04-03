@@ -25,7 +25,7 @@ export function stagesLogic(number, color) {
     const startNum2 = sampleArr[25].index;
     stage2Logic(number, color, index, startNum2, sampleArr);
   }
-  if (stageID === 3) {
+  if (stageID === 3 || stageID === 4) {
     stage3Logic(number, color, index, sampleArr);
   }
 }
@@ -54,7 +54,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
           console.log("Color changr error! Stage reset!");
           stageReset();
         }
-      } else if (stageID === 3) {
+      } else if (stageID === 3 || stageID === 4) {
         let colorChangeErrorArray = testArray.slice(-8);
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2, 2, 2, 2, 2].toString()) {
@@ -109,7 +109,6 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
         console.log(arr[curElement1].index);
       }
     } else if (number === arr[curElement1 - 1].index && color === "black") {
-      //CHECK user did doubleclick on one number
       console.log("Double Click Mistake");
       testArray.push(4);
     }
@@ -149,7 +148,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
           console.log("Color changr error! Stage reset!");
           stageReset();
         }
-      } else if (stageID === 3) {
+      } else if (stageID === 3 || stageID === 4) {
         let colorChangeErrorArray = testArray.slice(-8);
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2, 2, 2, 2, 2].toString()) {
@@ -207,6 +206,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
   if (stageID === 2) {
     if ((number === startNum - 23 && testArray.length > 10) || curElement2 === 49) {
       console.log(testArray, "Stage completed!");
+      tableSpace.style.pointerEvents = "none";
       localStorage.setItem("Stage2Time", JSON.stringify(`Stage 2 time: ${labelTimer.textContent}`));
       localStorage.setItem("Stage2MistakesArray", JSON.stringify(testArray));
       stopTestTimer();
@@ -251,9 +251,17 @@ export const stage3Logic = function (number, color, index, sampleArr) {
   }
   if (redDecrease && blackIncrease) {
     console.log("Test complete");
-    localStorage.setItem("Stage3Time", JSON.stringify(`Stage 3 time: ${labelTimer.textContent}`));
-    localStorage.setItem("Stage3MistakesArray", JSON.stringify(testArray));
     stopTestTimer();
+    tableSpace.style.pointerEvents = "none";
+    if (stageID === 3) {
+      localStorage.setItem("Stage3Time", JSON.stringify(`Stage 3 time: ${labelTimer.textContent}`));
+      localStorage.setItem("Stage3MistakesArray", JSON.stringify(testArray));
+      btnNextStage.removeAttribute("disabled");
+      btnNextStage.style.pointerEvents = "auto";
+    } else if (stageID === 4) {
+      localStorage.setItem("Stage4Time", JSON.stringify(`Stage 4 time: ${labelTimer.textContent}`));
+      localStorage.setItem("Stage4MistakesArray", JSON.stringify(testArray));
+    }
     redDecrease = false;
     blackIncrease = false;
     btnResult.removeAttribute("disabled");

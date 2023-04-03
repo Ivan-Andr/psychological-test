@@ -40,17 +40,14 @@ export const buttons = () => {
   btnStart.addEventListener("click", function () {
     const userObjectNew = JSON.parse(localStorage.getItem("user"));
     console.log(userObjectNew);
-    //const startNum = Number(userObjectNew.tableNumber);
-    //console.log(startNum);
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
     tableSpace.style.pointerEvents = "auto";
     startTestTimer();
-    btnNextStage.setAttribute("disabled", true);
-    btnNextStage.style.pointerEvents = "none";
     btnStart.setAttribute("disabled", true);
     btnStart.style.pointerEvents = "none";
-    //showResult();
+    btnResult.setAttribute("disabled", true);
+    btnResult.style.pointerEvents = "none";
   });
 
   btnStop.addEventListener("click", function () {
@@ -61,14 +58,17 @@ export const buttons = () => {
     openModal();
   });
   btnNextStage.addEventListener("click", function () {
-    if (stageID < 3) stageID++;
+    btnNextStage.setAttribute("disabled", true);
+    btnNextStage.style.pointerEvents = "none";
+    if (stageID < 4) stageID++;
     console.log(stageID);
     if (stageID === 2) {
       instructionStage2.classList.remove("hidden");
       instructionStage1.classList.add("hidden");
-    } else if (stageID === 3) {
+    } else if (stageID === 3 || stageID === 4) {
       instructionStage3.classList.remove("hidden");
       instructionStage2.classList.add("hidden");
+      instructionStage1.classList.add("hidden");
     }
     openModal();
   });
