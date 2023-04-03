@@ -13,7 +13,7 @@ export const timer = () => {
       } else {
         labelTimer.textContent = `${time} s`;
       }
-      if (time >= 20) {
+      if (time >= 90) {
         labelTimer.style.color = "red";
       }
       time++;
