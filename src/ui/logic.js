@@ -121,7 +121,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
   if (stageID === 1) {
     if ((number === startNum + 24 && testArray.length > 10) || curElement1 === 25) {
       console.log(testArray, "Stage completed!");
-      localStorage.setItem("Stage1Time", JSON.stringify(`Stage 1 time: ${labelTimer.textContent}`));
+      localStorage.setItem("Stage1Time", JSON.stringify(`${labelTimer.textContent}`));
       localStorage.setItem("Stage1MistakesArray", JSON.stringify(testArray));
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
@@ -215,7 +215,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
     if ((number === startNum - 23 && testArray.length > 10) || curElement2 === 49) {
       console.log(testArray, "Stage completed!");
       tableSpace.style.pointerEvents = "none";
-      localStorage.setItem("Stage2Time", JSON.stringify(`Stage 2 time: ${labelTimer.textContent}`));
+      localStorage.setItem("Stage2Time", JSON.stringify(`${labelTimer.textContent}`));
       localStorage.setItem("Stage2MistakesArray", JSON.stringify(testArray));
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
@@ -262,12 +262,12 @@ export const stage3Logic = function (number, color, index, sampleArr) {
     stopTestTimer();
     tableSpace.style.pointerEvents = "none";
     if (stageID === 3) {
-      localStorage.setItem("Stage3Time", JSON.stringify(`Stage 3 time: ${labelTimer.textContent}`));
+      localStorage.setItem("Stage3Time", JSON.stringify(`${labelTimer.textContent}`));
       localStorage.setItem("Stage3MistakesArray", JSON.stringify(testArray));
       btnNextStage.removeAttribute("disabled");
       btnNextStage.style.pointerEvents = "auto";
     } else if (stageID === 4) {
-      localStorage.setItem("Stage4Time", JSON.stringify(`Stage 4 time: ${labelTimer.textContent}`));
+      localStorage.setItem("Stage4Time", JSON.stringify(`${labelTimer.textContent}`));
       localStorage.setItem("Stage4MistakesArray", JSON.stringify(testArray));
     }
     redDecrease = false;
