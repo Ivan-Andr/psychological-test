@@ -103,5 +103,10 @@ export const langArr = {
     ru: "Вы хотите завершить тест?\nТекущий результат будет потерян!",
     uz: "Testni yakunlamoqchimisiz?\nJoriy natija yo'qoladi! ",
     en: "Do you want to complete the test?\nCurrent result will be lost!"
+  },
+  mistakeAlertMessage: {
+    ru: "Вы превысили лимит ошибок!\nМожете начать текущий этап снова!",
+    uz: "Siz xato chegarasidan oshib ketdingiz!\nBu vazifa yana boshlashingiz mumkin!",
+    en: "You have exceeded the error limit!\nYou can start the current stage again!"
   }
 };

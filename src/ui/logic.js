@@ -2,6 +2,7 @@
 import { stopTestTimer, btnInstruction, btnNextStage, btnStart, stageID, btnResult } from "./buttons.js";
 import { labelTimer } from "./timer.js";
 import { tableSpace } from "./table/table.js";
+import { mistakeAlert } from "./lang.js";
 let curElement1 = 0;
 let curElement2 = 25;
 const testArray = [];
@@ -52,6 +53,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
           console.log("Color changr error! Stage reset!");
+          mistakeAlert();
           stageReset();
         }
       } else if (stageID === 3 || stageID === 4) {
@@ -59,6 +61,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2, 2, 2, 2, 2].toString()) {
           console.log("Color change error! Stage reset!");
+          mistakeAlert();
           stageReset();
         }
       }
@@ -76,6 +79,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       console.log(arr[curElement1].index);
     } else if (curElement1 < 18 && number > arr[curElement1 + 7].index) {
       console.log("You skip more than 7 numbers! Stage reset!");
+      mistakeAlert();
       stageReset();
     } else if (number > arr[curElement1 + 2].index) {
       let skipDelta = number - arr[curElement1].index;
@@ -88,6 +92,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       console.log(arr[curElement1].index);
     } else if (curElement1 >= 7 && number < arr[curElement1 - 7].index) {
       console.log("You returned more than 7 numbers ! Stage reset!");
+      mistakeAlert();
       stageReset();
     } else if (curElement1 >= 4 && number < arr[curElement1 - 4].index) {
       let skipDelta = arr[curElement1].index - number;
@@ -146,6 +151,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2].toString()) {
           console.log("Color changr error! Stage reset!");
+          mistakeAlert();
           stageReset();
         }
       } else if (stageID === 3 || stageID === 4) {
@@ -153,6 +159,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
         console.log(colorChangeErrorArray);
         if (colorChangeErrorArray.toString() === [2, 2, 2, 2, 2, 2, 2, 2].toString()) {
           console.log("Color change error! Stage reset!");
+          mistakeAlert();
           stageReset();
         }
       }
@@ -172,6 +179,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       // console.log(arr[curElement2].index);
     } else if (curElement2 < 42 && number <= arr[curElement2 + 7].index) {
       console.log("You skip more than 7 numbers! Stage reset!");
+      mistakeAlert();
       stageReset();
     } else if (number < arr[curElement2 + 2].index) {
       let skipDelta = arr[curElement2].index - number;
@@ -184,6 +192,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       // console.log(arr[curElement2].index);
     } else if (curElement2 >= 31 && number >= arr[curElement2 - 7].index) {
       console.log("You returned more than 7 numbers ! Stage reset!");
+      mistakeAlert();
       stageReset();
     } else if (curElement2 >= 28 && number >= arr[curElement2 - 4].index) {
       let skipDelta = number - arr[curElement2].index;
@@ -195,7 +204,6 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       console.log(arr[curElement2].index);
     } else if (curElement2 >= 27) {
       if (number === arr[curElement2 - 2].index || number === arr[curElement2 - 3].index) {
-        //CHECK if clicked cell is less than order number
         testArray.push(5);
         curElement2 = index + 1;
         console.log("Return Mistake");

@@ -28,3 +28,15 @@ export function changeLanguage() {
     }
   }
 }
+
+export function mistakeAlert() {
+  let messageAlert = "";
+  if (langSelect.value === "ru") {
+    messageAlert = langArr["mistakeAlertMessage"]["ru"];
+  } else if (langSelect.value === "uz") {
+    messageAlert = langArr["mistakeAlertMessage"]["uz"];
+  } else {
+    messageAlert = langArr["mistakeAlertMessage"]["en"];
+  }
+  alert(messageAlert);
+}
