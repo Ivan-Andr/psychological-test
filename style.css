@@ -54,8 +54,8 @@ body > * {
 .table_cell_black:hover {
   background-color: #bdc3c7;
 }
-.table_cell_red:hover,
-.table_cell_black:hover {
+.table_cell_red:active,
+.table_cell_black:active {
   background-color: #7f8c8d;
 }
 .table_cell_black {
@@ -249,6 +249,6 @@ label {
   width: 90%;
   border: 1px solid #444;
 }
-.result-td {
+.result {
   border: 1px solid #444;
 }

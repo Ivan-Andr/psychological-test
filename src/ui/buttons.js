@@ -5,7 +5,7 @@ import { form } from "./form.js";
 import { langSelect } from "./lang.js";
 import { langArr } from "./translation.js";
 import { stageReset } from "./logic.js";
-export let stageID = 1;
+export let stageID = 3;
 import { tableSpace } from "./table/table.js";
 import { showResult } from "./result.js";
 export const btnStart = document.querySelector("#btn--start");
