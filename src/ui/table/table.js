@@ -8,6 +8,7 @@ export const uiSpace = document.querySelector(".ui--space");
 export const table = (shuffledArray) => {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement("table");
+  tbl.className = "number_table";
   const tblBody = document.createElement("tbody");
   // creating all cells
   for (let i = 0; i < 7; i++) {

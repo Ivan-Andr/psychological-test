@@ -38,21 +38,24 @@ body > * {
 .footer {
   margin-top: auto;
 }
-table {
+.number_table {
   width: 770px;
   margin: 10px;
 }
-td {
+.table_cell_red,
+.table_cell_black {
   width: 110px;
   height: 110px;
   text-align: center;
   font-size: 60px;
   cursor: pointer;
 }
-td:hover {
+.table_cell_red:hover,
+.table_cell_black:hover {
   background-color: #bdc3c7;
 }
-td:active {
+.table_cell_red:active,
+.table_cell_black:active {
   background-color: #7f8c8d;
 }
 .table_cell_black {
@@ -241,4 +244,14 @@ label {
   line-height: 24px;
   font-weight: 800;
   margin-bottom: 4px;
+}
+.result-table {
+  width: 90%;
+  border: 1px solid #444;
+}
+.result {
+  border: 1px solid #444;
+}
+#conclution {
+  width: 20%;
 }
