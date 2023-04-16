@@ -140,7 +140,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
         curElement2 = 48 - index + 1;
         console.log("Color change mistake");
         testArray.push(2);
-        console.log(`Next ${arr[curElement2].index}`);
+        //   console.log(`Next ${arr[curElement2].index}`);
       } else {
         testArray.push(2);
         console.log("Color change mistake");

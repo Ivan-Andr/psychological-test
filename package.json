@@ -50,5 +50,8 @@
     "*.{html,css}": [
       "npm run format"
     ]
+  },
+  "dependencies": {
+    "print-js": "^1.6.0"
   }
 }

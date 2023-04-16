@@ -95,7 +95,8 @@ body > * {
   color: #fff;
 }
 .btn--instruction:hover,
-.btn--result:hover {
+.btn--result:hover,
+.btn--print:hover {
   background-color: #3498db;
   color: #fff;
 }
@@ -127,7 +128,12 @@ body > * {
     order: 4;
   }
 }
-
+@media all and (max-width: 500px) {
+  .number_table {
+    width: 390px;
+    margin: 5px;
+  }
+}
 .test-timer {
   font-size: 20px;
   text-align: center;
@@ -246,7 +252,7 @@ label {
   margin-bottom: 4px;
 }
 .result-table {
-  width: 90%;
+  width: 80%;
   border: 1px solid #444;
 }
 .result {
