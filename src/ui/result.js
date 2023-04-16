@@ -58,7 +58,7 @@ export const showResult = function () {
 
   modalResult.classList.remove("hidden");
   overlayResult.classList.remove("hidden");
-  btnPrint.addEventListener("click", printResult());
+  btnPrint.addEventListener("click", printResult);
   btnCloseResult.addEventListener("click", closeResultModal);
   overlayResult.addEventListener("click", closeResultModal);
 };
@@ -68,6 +68,10 @@ const closeResultModal = function () {
   overlayResult.classList.add("hidden");
 };
 
-export const printResult = function () {
-  printJS("result-header", "html");
+const printResult = function () {
+  printJS({
+    printable: "result-window",
+    type: "html",
+    targetStyles: ["*"]
+  });
 };

@@ -252,8 +252,9 @@ label {
   margin-bottom: 4px;
 }
 .result-table {
-  width: 80%;
+  width: 90%;
   border: 1px solid #444;
+  font-size: 15px;
 }
 .result {
   border: 1px solid #444;
