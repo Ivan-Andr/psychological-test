@@ -35,7 +35,8 @@
     "npm": "^9.6.2",
     "parcel": "^2.8.3",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.8.6"
+    "prettier": "^2.8.6",
+    "print-js": "^1.6.0"
   },
   "husky": {
     "hooks": {
@@ -50,8 +51,5 @@
     "*.{html,css}": [
       "npm run format"
     ]
-  },
-  "dependencies": {
-    "print-js": "^1.6.0"
   }
 }

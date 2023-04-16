@@ -68,6 +68,6 @@ const closeResultModal = function () {
   overlayResult.classList.add("hidden");
 };
 
-const printResult = function () {
-  printJS("modal-result", "html");
+export const printResult = function () {
+  printJS("result-header", "html");
 };
