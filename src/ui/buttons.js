@@ -38,8 +38,7 @@ export const buttons = () => {
   btnResult.setAttribute("disabled", true);
   btnResult.style.pointerEvents = "none";
   btnStart.addEventListener("click", function () {
-    const userObjectNew = JSON.parse(localStorage.getItem("user"));
-    console.log(userObjectNew);
+    // const userObjectNew = JSON.parse(localStorage.getItem("user"));
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
     tableSpace.style.pointerEvents = "auto";
@@ -88,7 +87,6 @@ export const buttons = () => {
     }
   });
   btnResult.addEventListener("click", function () {
-    console.log("Show result");
     showResult();
   });
   btnCloseInstruction.addEventListener("click", closeModal);

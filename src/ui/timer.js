@@ -11,7 +11,7 @@ export const timer = () => {
       } else if (langSelect.value === "uz") {
         labelTimer.textContent = `${time} sek`;
       } else {
-        labelTimer.textContent = `${time} s`;
+        labelTimer.textContent = `${time} sec`;
       }
       if (time >= 90) {
         labelTimer.style.color = "red";
