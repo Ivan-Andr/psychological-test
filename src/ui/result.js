@@ -19,22 +19,22 @@ const stage1Time = document.querySelector("#stage1-time");
 const stage2Time = document.querySelector("#stage2-time");
 const stage3Time = document.querySelector("#stage3-time");
 const stage4Time = document.querySelector("#stage4-time");
-// const colorChangeSt1 = document.querySelector("#color-change1");
-// const colorChangeSt2 = document.querySelector("#color-change2");
-// const colorChangeSt3 = document.querySelector("#color-change3");
-// const colorChangeSt4 = document.querySelector("#color-change4");
-// const skipSt1 = document.querySelector("#skip1");
-// const skipSt2 = document.querySelector("#skip2");
-// const skipSt3 = document.querySelector("#skip3");
-// const skipSt4 = document.querySelector("#skip4");
-// const returnSt1 = document.querySelector("#return1");
-// const returnSt2 = document.querySelector("#return2");
-// const returnSt3 = document.querySelector("#return3");
-// const returnSt4 = document.querySelector("#return4");
-// const doubleClickSt1 = document.querySelector("#double-click1");
-// const doubleClickSt2 = document.querySelector("#double-click3");
-// const doubleClickSt3 = document.querySelector("#double-click3");
-// const doubleClickSt4 = document.querySelector("#double-click4");
+const colorChangeSt1 = document.querySelector("#color-change1");
+const colorChangeSt2 = document.querySelector("#color-change2");
+const colorChangeSt3 = document.querySelector("#color-change3");
+const colorChangeSt4 = document.querySelector("#color-change4");
+const skipSt1 = document.querySelector("#skip1");
+const skipSt2 = document.querySelector("#skip2");
+const skipSt3 = document.querySelector("#skip3");
+const skipSt4 = document.querySelector("#skip4");
+const returnSt1 = document.querySelector("#return1");
+const returnSt2 = document.querySelector("#return2");
+const returnSt3 = document.querySelector("#return3");
+const returnSt4 = document.querySelector("#return4");
+const doubleClickSt1 = document.querySelector("#double-click1");
+const doubleClickSt2 = document.querySelector("#double-click3");
+const doubleClickSt3 = document.querySelector("#double-click3");
+const doubleClickSt4 = document.querySelector("#double-click4");
 export const showResult = function () {
   const userObj = JSON.parse(window.localStorage.getItem("user"));
   const stage1MistakesArray = JSON.parse(window.localStorage.getItem("Stage1MistakesArray"));
@@ -49,7 +49,32 @@ export const showResult = function () {
   stage2Time.innerText = JSON.parse(window.localStorage.getItem("Stage2Time"));
   stage3Time.innerText = JSON.parse(window.localStorage.getItem("Stage3Time"));
   stage4Time.innerText = JSON.parse(window.localStorage.getItem("Stage4Time"));
-  //skipSt3.innerHTML = stage3MistakesArray.filter((item) => item === 3).length;
+
+  if (stage3MistakesArray) {
+    skipSt3.innerText = getMistakes(stage3MistakesArray, 3);
+    returnSt3.innerText = getMistakes(stage3MistakesArray, 5);
+    doubleClickSt3.innerText = getMistakes(stage3MistakesArray, 4);
+    colorChangeSt3.innerText = getMistakes(stage3MistakesArray, 2);
+  }
+  if (stage1MistakesArray) {
+    skipSt1.innerText = getMistakes(stage1MistakesArray, 3);
+    returnSt1.innerText = getMistakes(stage1MistakesArray, 5);
+    doubleClickSt1.innerText = getMistakes(stage1MistakesArray, 4);
+    colorChangeSt1.innerText = getMistakes(stage1MistakesArray, 2);
+  }
+  if (stage2MistakesArray) {
+    skipSt2.innerText = getMistakes(stage2MistakesArray, 3);
+    returnSt2.innerText = getMistakes(stage2MistakesArray, 5);
+    doubleClickSt2.innerText = getMistakes(stage2MistakesArray, 4);
+    colorChangeSt2.innerText = getMistakes(stage2MistakesArray, 2);
+  }
+  if (stage4MistakesArray) {
+    skipSt4.innerText = getMistakes(stage4MistakesArray, 3);
+    returnSt4.innerText = getMistakes(stage4MistakesArray, 5);
+    doubleClickSt4.innerText = getMistakes(stage4MistakesArray, 4);
+    colorChangeSt4.innerText = getMistakes(stage4MistakesArray, 2);
+  }
+
   resultUserName.innerText = `${userObj.lastName} ${userObj.name}`;
   resultUserProfession.innerText = `Специальность: ${userObj.profession}`;
   resultUserBirthYear.innerText = `Год рождения: ${userObj.birthYear}`;
@@ -74,4 +99,8 @@ const printResult = function () {
     type: "html",
     targetStyles: ["*"]
   });
+};
+
+const getMistakes = function (arr, num) {
+  return arr.filter((item) => item === num).length;
 };
