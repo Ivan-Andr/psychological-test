@@ -77,7 +77,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       testArray.push(3);
       curElement1 = index + 1;
       console.log(arr[curElement1].index);
-    } else if (curElement1 < 18 && number > arr[curElement1 + 7].index) {
+    } else if (curElement1 < 18 && number > arr[curElement1 + 6].index) {
       console.log("You skip more than 7 numbers! Stage reset!");
       mistakeAlert();
       stageReset();
@@ -90,7 +90,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       console.log(testArray);
       curElement1 = index + 1;
       console.log(arr[curElement1].index);
-    } else if (curElement1 >= 7 && number < arr[curElement1 - 7].index) {
+    } else if (curElement1 >= 7 && number < arr[curElement1 - 6].index) {
       console.log("You returned more than 7 numbers ! Stage reset!");
       mistakeAlert();
       stageReset();
@@ -140,7 +140,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
         curElement2 = 48 - index + 1;
         console.log("Color change mistake");
         testArray.push(2);
-        console.log(`Next ${arr[curElement2].index}`);
+        //   console.log(`Next ${arr[curElement2].index}`);
       } else {
         testArray.push(2);
         console.log("Color change mistake");
@@ -177,7 +177,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       curElement2 = index + 1;
       console.log("Skip Mistake");
       // console.log(arr[curElement2].index);
-    } else if (curElement2 < 42 && number <= arr[curElement2 + 7].index) {
+    } else if (curElement2 < 42 && number <= arr[curElement2 + 6].index) {
       console.log("You skip more than 7 numbers! Stage reset!");
       mistakeAlert();
       stageReset();
@@ -190,7 +190,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       curElement2 = index + 1;
       console.log("Skip Mistake2");
       // console.log(arr[curElement2].index);
-    } else if (curElement2 >= 31 && number >= arr[curElement2 - 7].index) {
+    } else if (curElement2 >= 31 && number >= arr[curElement2 - 6].index) {
       console.log("You returned more than 7 numbers ! Stage reset!");
       mistakeAlert();
       stageReset();

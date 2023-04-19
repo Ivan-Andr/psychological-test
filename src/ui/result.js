@@ -1,4 +1,7 @@
 "use strict";
+import printJS from "print-js";
+
+const btnPrint = document.querySelector("#btn--print");
 const overlayResult = document.querySelector(".overlay-result");
 const modalResult = document.querySelector(".modal-result");
 //const resultData = document.querySelector("#result-data");
@@ -55,6 +58,7 @@ export const showResult = function () {
 
   modalResult.classList.remove("hidden");
   overlayResult.classList.remove("hidden");
+  btnPrint.addEventListener("click", printResult);
   btnCloseResult.addEventListener("click", closeResultModal);
   overlayResult.addEventListener("click", closeResultModal);
 };
@@ -62,4 +66,12 @@ export const showResult = function () {
 const closeResultModal = function () {
   modalResult.classList.add("hidden");
   overlayResult.classList.add("hidden");
+};
+
+const printResult = function () {
+  printJS({
+    printable: "result-window",
+    type: "html",
+    targetStyles: ["*"]
+  });
 };
