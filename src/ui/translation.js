@@ -17,7 +17,7 @@ export const langArr = {
   "instruction-stage2": {
     ru: "Задание 2. Сейчас  Вы  должны находить числа только красного цвета в порядке убывания, начиная с 24 (25 или 26) и заканчивая 1 (2 или 3)",
     uz: "2-vazifa. Siz hozir 24 (25 yoki 26) dan boshlab 1 (2 yoki 3) gacha bo‘lgan sonlarni kamayish tartibida, faqat qizil rangdagilarini aniqlashingiz kerak.",
-    en: "Task 1. Now you have to find only red numbers in descending order, starting from 24 (25 or 26) and ending with 1 (2 or 3)."
+    en: "Task 2. Now you have to find only red numbers in descending order, starting from 24 (25 or 26) and ending with 1 (2 or 3)."
   },
   "instruction-stage3": {
     ru: "Задание 3. Сейчас Вы должны одновременно находить и черные, и красные числа, чередуя их в следующем порядке: 1 (2 или 3) черная - 24 (25 или 26) красная, 2 (3 или 4) черная - 23 (24 или 25) красная, 3 (4 или 5) черная - 22 (23 или 24) красная и т.д., т.е. цифры черного цвета нарастают (как в первом задании), а цифры красного цвета убывают (как во втором задании). Закончить Вы должны самой маленькой красной и самой большой черной цифрой, т.е. 1 (2 или 3) красная  - 25 (26 или 27) черная. Задание необходимо довести до конца, не прерывая его.",
@@ -85,9 +85,9 @@ export const langArr = {
     en: "Stop task execution"
   },
   "test-timer": {
-    ru: "⏱️ Время выполнения теста:",
-    uz: "⏱️ Testni bajarish vaqti:",
-    en: "⏱️ Test execution time:"
+    ru: "⏱️ Время выполнения теста (сек):",
+    uz: "⏱️ Testni bajarish vaqti (sek):",
+    en: "⏱️ Test execution time (sec):"
   },
   "btn--instruction": {
     ru: "Инструкция к тесту",

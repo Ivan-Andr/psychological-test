@@ -1,10 +1,10 @@
 "use strict";
 import printJS from "print-js";
+import { stageID } from "./buttons";
 
 const btnPrint = document.querySelector("#btn--print");
 const overlayResult = document.querySelector(".overlay-result");
 const modalResult = document.querySelector(".modal-result");
-//const resultData = document.querySelector("#result-data");
 const btnCloseResult = document.querySelector(".close-modal-result");
 const resultUserName = document.querySelector("#user-name");
 const resultUserProfession = document.querySelector("#user-profession");
@@ -32,9 +32,10 @@ const returnSt2 = document.querySelector("#return2");
 const returnSt3 = document.querySelector("#return3");
 const returnSt4 = document.querySelector("#return4");
 const doubleClickSt1 = document.querySelector("#double-click1");
-const doubleClickSt2 = document.querySelector("#double-click3");
+const doubleClickSt2 = document.querySelector("#double-click2");
 const doubleClickSt3 = document.querySelector("#double-click3");
 const doubleClickSt4 = document.querySelector("#double-click4");
+const resultTime = document.querySelector("#result-time");
 export const showResult = function () {
   const userObj = JSON.parse(window.localStorage.getItem("user"));
   const stage1MistakesArray = JSON.parse(window.localStorage.getItem("Stage1MistakesArray"));
@@ -80,7 +81,7 @@ export const showResult = function () {
   resultUserBirthYear.innerText = `Год рождения: ${userObj.birthYear}`;
   resultTableVar.innerText = `Вариант теста: ${userObj.tableNumber}`;
   resultTestDate.innerText = `Дата: ${userObj.testDate.slice(0, 10)}`;
-
+  resultTime.innerText = showResultTime();
   modalResult.classList.remove("hidden");
   overlayResult.classList.remove("hidden");
   btnPrint.addEventListener("click", printResult);
@@ -103,4 +104,15 @@ const printResult = function () {
 
 const getMistakes = function (arr, num) {
   return arr.filter((item) => item === num).length;
+};
+const showResultTime = function () {
+  let resultTimeStr = "";
+  if (stageID === 3) {
+    resultTimeStr = `T = C-(A+B) = ${stage3Time.innerText - stage2Time.innerText - stage1Time.innerText}.`;
+  } else if (stageID === 4) {
+    resultTimeStr = `T = C-(A+B) = ${
+      stage3Time.innerText - stage2Time.innerText - stage1Time.innerText
+    }. Ty = C' - C = ${stage4Time.innerText - stage3Time.innerText}`;
+  }
+  return resultTimeStr;
 };

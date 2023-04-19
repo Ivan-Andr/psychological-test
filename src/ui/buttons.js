@@ -2,7 +2,7 @@
 import { modal } from "./modal.js";
 import { timer } from "./timer.js";
 import { form } from "./form.js";
-import { langSelect } from "./lang.js";
+import { langSelect, showStageID } from "./lang.js";
 import { langArr } from "./translation.js";
 import { stageReset } from "./logic.js";
 export let stageID = 1;
@@ -38,7 +38,6 @@ export const buttons = () => {
   btnResult.setAttribute("disabled", true);
   btnResult.style.pointerEvents = "none";
   btnStart.addEventListener("click", function () {
-    // const userObjectNew = JSON.parse(localStorage.getItem("user"));
     btnInstruction.setAttribute("disabled", true);
     btnInstruction.style.pointerEvents = "none";
     tableSpace.style.pointerEvents = "auto";
@@ -47,6 +46,7 @@ export const buttons = () => {
     btnStart.style.pointerEvents = "none";
     btnResult.setAttribute("disabled", true);
     btnResult.style.pointerEvents = "none";
+    showStageID();
   });
 
   btnStop.addEventListener("click", function () {
@@ -60,6 +60,7 @@ export const buttons = () => {
     btnNextStage.setAttribute("disabled", true);
     btnNextStage.style.pointerEvents = "none";
     if (stageID < 4) stageID++;
+    showStageID();
     console.log(stageID);
     if (stageID === 2) {
       instructionStage2.classList.remove("hidden");
