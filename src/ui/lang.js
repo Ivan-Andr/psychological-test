@@ -19,13 +19,13 @@ export function changeLanguage() {
     location.reload();
   }
   langSelect.value = hash;
-  for (let key in langArr) {
+  for (let key in langArr()) {
     let element = document.querySelector(`#${key}`);
-    if (langArr[key][hash] === undefined) {
-      langArr[key][hash] = langArr[key]["ru"];
+    if (langArr()[key][hash] === undefined) {
+      langArr()[key][hash] = langArr[key]["ru"];
     }
     if (element) {
-      element.innerHTML = langArr[key][hash];
+      element.innerHTML = langArr()[key][hash];
     }
   }
 }
@@ -33,11 +33,11 @@ export function changeLanguage() {
 export function mistakeAlert() {
   let messageAlert = "";
   if (langSelect.value === "ru") {
-    messageAlert = langArr["mistakeAlertMessage"]["ru"];
+    messageAlert = langArr()["mistakeAlertMessage"]["ru"];
   } else if (langSelect.value === "uz") {
-    messageAlert = langArr["mistakeAlertMessage"]["uz"];
+    messageAlert = langArr()["mistakeAlertMessage"]["uz"];
   } else {
-    messageAlert = langArr["mistakeAlertMessage"]["en"];
+    messageAlert = langArr()["mistakeAlertMessage"]["en"];
   }
   alert(messageAlert);
 }

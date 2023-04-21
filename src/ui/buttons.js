@@ -80,11 +80,11 @@ export const buttons = () => {
   btnFinish.addEventListener("click", function () {
     let message = "";
     if (langSelect.value === "ru") {
-      message = langArr["confirm-window-message"]["ru"];
+      message = langArr()["confirm-window-message"]["ru"];
     } else if (langSelect.value === "uz") {
-      message = langArr["confirm-window-message"]["uz"];
+      message = langArr()["confirm-window-message"]["uz"];
     } else {
-      message = langArr["confirm-window-message"]["en"];
+      message = langArr()["confirm-window-message"]["en"];
     }
     if (window.confirm(`${message}`)) {
       localStorage.clear();
