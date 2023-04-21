@@ -1,10 +1,9 @@
 "use strict";
-import { stageID } from "./buttons.js";
 import { langArr } from "./translation.js";
 export const langSelect = document.querySelector(".change-lang");
 const languages = ["ru", "en", "uz"];
 langSelect.addEventListener("change", changeURLLanguage);
-const stageIDLabel = document.querySelector("#stage-ID");
+//const stageIDLabel = document.querySelector("#stage-ID");
 function changeURLLanguage() {
   let lang = langSelect.value;
   location.href = window.location.pathname + "#" + lang;
@@ -43,12 +42,12 @@ export function mistakeAlert() {
   alert(messageAlert);
 }
 
-export function showStageID() {
-  if (langSelect.value === "ru") {
-    stageIDLabel.innerText = `Этап ${stageID}`;
-  } else if (langSelect.value === "uz") {
-    stageIDLabel.innerText = `Vazifa ${stageID}`;
-  } else {
-    stageIDLabel.innerText = `Stage ${stageID}`;
-  }
-}
+// export function showStageID() {
+//   if (langSelect.value === "ru") {
+//     stageIDLabel.innerText = `Этап ${stageID}`;
+//   } else if (langSelect.value === "uz") {
+//     stageIDLabel.innerText = `Vazifa ${stageID}`;
+//   } else {
+//     stageIDLabel.innerText = `Stage ${stageID}`;
+//   }
+// }

@@ -1,3 +1,7 @@
+import { stageIDEn, stageIDRu, stageIDUz } from "./buttons";
+console.log(stageIDRu);
+console.log(stageIDUz);
+console.log(stageIDEn);
 export const langArr = {
   "page-name": {
     ru: "Тест на определение скорости переключения внимания",
@@ -108,5 +112,13 @@ export const langArr = {
     ru: "Вы превысили лимит ошибок!\nМожете начать текущий этап снова!",
     uz: "Siz xato chegarasidan oshib ketdingiz!\nBu vazifa yana boshlashingiz mumkin!",
     en: "You have exceeded the error limit!\nYou can start the current stage again!"
+  },
+  "stage-ID": {
+    // ru: `Этап ${stageID}`,
+    // uz: `Vazifa ${stageID}`,
+    // en: `Stage ${stageID}`
+    ru: stageIDRu,
+    uz: stageIDUz,
+    en: stageIDEn
   }
 };

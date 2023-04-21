@@ -2,12 +2,18 @@
 import { modal } from "./modal.js";
 import { timer } from "./timer.js";
 import { form } from "./form.js";
-import { langSelect, showStageID } from "./lang.js";
+import { langSelect } from "./lang.js";
 import { langArr } from "./translation.js";
 import { stageReset } from "./logic.js";
-export let stageID = 1;
 import { tableSpace } from "./table/table.js";
 import { showResult } from "./result.js";
+export let stageID = 1;
+export let stageIDRu = `Этап ${stageID}`;
+console.log(stageIDRu);
+export let stageIDUz = `Vazifa ${stageID}`;
+console.log(stageIDUz);
+export let stageIDEn = `Stage ${stageID}`;
+console.log(stageIDEn);
 export const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
@@ -46,7 +52,6 @@ export const buttons = () => {
     btnStart.style.pointerEvents = "none";
     btnResult.setAttribute("disabled", true);
     btnResult.style.pointerEvents = "none";
-    showStageID();
   });
 
   btnStop.addEventListener("click", function () {
@@ -60,7 +65,6 @@ export const buttons = () => {
     btnNextStage.setAttribute("disabled", true);
     btnNextStage.style.pointerEvents = "none";
     if (stageID < 4) stageID++;
-    showStageID();
     console.log(stageID);
     if (stageID === 2) {
       instructionStage2.classList.remove("hidden");
