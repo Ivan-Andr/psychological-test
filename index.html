@@ -62,11 +62,20 @@
 
     <div class="modal-stageEnd hidden">
       <button class="close-modal-stageEnd">&times;</button>
-      <h2 id="stageEnd-header">✅ Задание выпонено!</h2>
-      <p class="instruction" id="modal-stage123End">
-        Вы можете перейти к следующему этапу нажав кнопку "К следующему заданию" или повторить текущий этап нажав кнопку
-        "Прервать выполнение задания"
-      </p>
+      <div id="stage123-modal">
+        <h2 id="stageEnd-header">✅ Задание выпонено!</h2>
+        <p class="instruction" id="modal-stage123End">
+          Вы можете перейти к следующему этапу нажав кнопку "К следующему заданию" или повторить текущий этап нажав
+          кнопку "Прервать выполнение задания"
+        </p>
+      </div>
+      <div class="stage4-modal hidden" id="stage4-modal">
+        <h2 id="testEnd-header">✅ Тест завершен!</h2>
+        <p class="instruction" id="modal-stage4End">
+          Вы можете посмотреть свой результат, нажав кнопку "Результат" или повторить текущий этап нажав, кнопку
+          "Прервать выполнение задания"
+        </p>
+      </div>
     </div>
     <div class="overlay-stageEnd hidden"></div>
 
@@ -183,7 +192,7 @@
         <button class="btn btn--stop" id="btn--stop">Прервать выполнение задания</button>
       </div>
       <div>
-        <p class="test-timer">Этап <span class="stageID-label">1</span></p>
+        <p class="test-timer" id="stageID-label">Этап <span class="stageID-label">1</span></p>
         <p class="test-timer" id="test-timer">⏱️ Время выполнения теста:</p>
         <p class="timer" id="timer">0</p>
       </div>

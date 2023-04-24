@@ -105,6 +105,11 @@ export const langArr = () => {
       uz: "Keyingi vazifaga o‘tish",
       en: "Next task"
     },
+    "btn--result": {
+      ru: "Результат",
+      uz: "Natija",
+      en: "Result"
+    },
     "confirm-window-message": {
       ru: "Вы хотите завершить тест?\nТекущий результат будет потерян!",
       uz: "Testni yakunlamoqchimisiz?\nJoriy natija yo'qoladi! ",
@@ -115,20 +120,30 @@ export const langArr = () => {
       uz: "Siz xato chegarasidan oshib ketdingiz!\nBu vazifa yana boshlashingiz mumkin!",
       en: "You have exceeded the error limit!\nYou can start the current stage again!"
     },
-    "stageID-label": {
+    "stage-label": {
       ru: "Этап ",
       uz: "Vazifa ",
       en: "Stage "
     },
     "modal-stage123End": {
       ru: 'Вы можете перейти к следующему этапу нажав кнопку "К следующему заданию" или повторить текущий этап нажав кнопку "Прервать выполнение задания"',
-      uz: '"Keyingi vazifaga o‘tish" tugmasini bosish orqali keyingi vazifaga o‘tishingiz yoki "Vazifani to\'xtatish" tugmasini bosish orqali joriy qadamni takrorlashingiz mumkin',
+      uz: '"Keyingi vazifaga o‘tish" tugmasini bosish orqali keyingi vazifaga o‘tishingiz yoki "Vazifani to‘xtatish" tugmasini bosish orqali joriy qadamni takrorlashingiz mumkin',
       en: 'You can go to the next task by clicking the "Next task" button or repeat the current task by clicking the button "Stop task execution"'
     },
     "stageEnd-header": {
       ru: "✅ Задание выполнено!",
       uz: "✅ Vazifa bajarildi!",
       en: "✅ Stage complete!"
+    },
+    "testEnd-header": {
+      ru: "✅ Тест завершен!",
+      uz: "✅ Тest yakunlandi!",
+      en: "✅ Тest completed!"
+    },
+    "modal-stage4End": {
+      ru: 'Вы можете посмотреть свой результат, нажав кнопку "Результат" или повторить текущий этап, нажав кнопку "Прервать выполнение задания"',
+      uz: '"Natija" tugmasini bosish orqali natijangizni ko‘rishingiz mumkin yoki "Vazifani to‘xtatish" tugmasini bosish orqali joriy qadamni takrorlashingiz mumkin',
+      en: 'You can view your result by clicking the "Result" button or repeat the current task by clicking the button "Stop task execution"'
     }
   };
 };

@@ -53,6 +53,8 @@ export const buttons = () => {
     btnStart.style.pointerEvents = "none";
     btnResult.setAttribute("disabled", true);
     btnResult.style.pointerEvents = "none";
+    btnNextStage.setAttribute("disabled", true);
+    btnNextStage.style.pointerEvents = "none";
   });
 
   btnStop.addEventListener("click", function () {

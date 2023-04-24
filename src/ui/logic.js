@@ -275,6 +275,7 @@ export const stage3Logic = function (number, color, index, sampleArr) {
     } else if (stageID === 4) {
       localStorage.setItem("Stage4Time", JSON.stringify(`${labelTimer.textContent}`));
       localStorage.setItem("Stage4MistakesArray", JSON.stringify(testArray));
+      stageEndModal();
     }
     redDecrease = false;
     blackIncrease = false;
