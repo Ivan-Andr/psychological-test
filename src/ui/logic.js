@@ -3,6 +3,7 @@ import { stopTestTimer, btnInstruction, btnNextStage, btnStart, stageID, btnResu
 import { labelTimer } from "./timer.js";
 import { tableSpace } from "./table/table.js";
 import { mistakeAlert } from "./lang.js";
+import { stageEndModal } from "./modal.js";
 let curElement1 = 0;
 let curElement2 = 25;
 const testArray = [];
@@ -128,6 +129,7 @@ export const stage1Logic = function (number, color, index, startNum, arr) {
       btnNextStage.removeAttribute("disabled");
       btnNextStage.style.pointerEvents = "auto";
       tableSpace.style.pointerEvents = "none";
+      stageEndModal();
     }
   }
 };
@@ -219,6 +221,7 @@ export const stage2Logic = function (number, color, index, startNum, arr) {
       stopTestTimer();
       btnNextStage.removeAttribute("disabled");
       btnNextStage.style.pointerEvents = "auto";
+      stageEndModal();
     }
   }
 };
@@ -268,6 +271,7 @@ export const stage3Logic = function (number, color, index, sampleArr) {
       localStorage.setItem("Stage3MistakesArray", JSON.stringify(testArray));
       btnNextStage.removeAttribute("disabled");
       btnNextStage.style.pointerEvents = "auto";
+      stageEndModal();
     } else if (stageID === 4) {
       localStorage.setItem("Stage4Time", JSON.stringify(`${labelTimer.textContent}`));
       localStorage.setItem("Stage4MistakesArray", JSON.stringify(testArray));

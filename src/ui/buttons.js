@@ -17,6 +17,7 @@ console.log(stageIDEn);
 export const btnStart = document.querySelector("#btn--start");
 const btnFinish = document.querySelector("#btn--finish");
 const btnStop = document.querySelector("#btn--stop");
+let showStageID = document.querySelector(".stageID-label");
 export const btnResult = document.querySelector("#btn--result");
 export const btnInstruction = document.querySelector("#btn--instruction");
 export const btnNextStage = document.querySelector("#btn--next");
@@ -26,7 +27,7 @@ const btnCloseForm = document.querySelector(".close-modal-form");
 const instructionStage1 = document.querySelector("#instruction-stage1");
 const instructionStage2 = document.querySelector("#instruction-stage2");
 const instructionStage3 = document.querySelector("#instruction-stage3");
-
+const instructionStage4 = document.querySelector("#instruction-stage4");
 const { openModal, closeModal } = modal();
 export const { startTestTimer, stopTestTimer } = timer();
 const { openModalForm, closeModalForm } = form();
@@ -37,7 +38,7 @@ export const startApp = () => {
   });
   btnCloseForm.addEventListener("click", closeModalForm);
 };
-
+showStageID.innerText = stageID;
 export const buttons = () => {
   btnNextStage.setAttribute("disabled", true);
   btnNextStage.style.pointerEvents = "none";
@@ -65,12 +66,19 @@ export const buttons = () => {
     btnNextStage.setAttribute("disabled", true);
     btnNextStage.style.pointerEvents = "none";
     if (stageID < 4) stageID++;
+    showStageID.innerText = stageID;
     console.log(stageID);
     if (stageID === 2) {
       instructionStage2.classList.remove("hidden");
       instructionStage1.classList.add("hidden");
-    } else if (stageID === 3 || stageID === 4) {
+    }
+    if (stageID === 3) {
       instructionStage3.classList.remove("hidden");
+      instructionStage2.classList.add("hidden");
+      instructionStage1.classList.add("hidden");
+    } else if (stageID === 4) {
+      instructionStage4.classList.remove("hidden");
+      instructionStage3.classList.add("hidden");
       instructionStage2.classList.add("hidden");
       instructionStage1.classList.add("hidden");
     }

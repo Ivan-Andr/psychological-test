@@ -109,7 +109,7 @@ const showResultTime = function () {
   let resultTimeStr = "";
   if (stageID === 3) {
     resultTimeStr = `T = C-(A+B) = ${stage3Time.innerText - stage2Time.innerText - stage1Time.innerText}.`;
-  } else if (stageID === 4) {
+  } else if (stageID === 4 && stage4Time.innerText) {
     resultTimeStr = `T = C-(A+B) = ${
       stage3Time.innerText - stage2Time.innerText - stage1Time.innerText
     }. Ty = C' - C = ${stage4Time.innerText - stage3Time.innerText}`;
