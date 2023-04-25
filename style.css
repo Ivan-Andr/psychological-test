@@ -138,6 +138,9 @@ body > * {
   font-size: 20px;
   text-align: center;
 }
+.stageID-label {
+  display: inline-block;
+}
 .timer {
   font-size: 23px;
   font-weight: bold;
@@ -145,7 +148,8 @@ body > * {
 }
 .modal-instruction,
 .modal-form,
-.modal-result {
+.modal-result,
+.modal-stageEnd {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -158,7 +162,8 @@ body > * {
   z-index: 10;
 }
 .modal-instruction,
-.modal-form {
+.modal-form,
+.modal-stageEnd {
   width: 40%;
 }
 
@@ -168,7 +173,8 @@ body > * {
 
 .overlay-instruction,
 .overlay-form,
-.overlay-result {
+.overlay-result,
+.overlay-stageEnd {
   position: absolute;
   top: 0;
   left: 0;
@@ -184,11 +190,12 @@ body > * {
 }
 .close-modal,
 .close-modal-form,
-.close-modal-result {
+.close-modal-result,
+.close-modal-stageEnd {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
-  font-size: 4rem;
+  font-size: 3rem;
   color: #333;
   cursor: pointer;
   border: none;

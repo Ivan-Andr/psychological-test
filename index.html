@@ -28,6 +28,11 @@
         маленькой красной и самой большой черной цифрой, т.е. 1кр. - 25чер. Задание необходимо довести до конца, не
         прерывая его".
       </p>
+      <p class="insruction hidden" id="instruction-stage4">
+        Задание 4. "Сейчас Вы будете выполнять такую же работу, как и в предыдущем задании, т.е. вести смешанный счет
+        черных и красных чисел. Выполнение задания будет сопровождаться сбивающими звуковыми помехами. Ваша задача - не
+        отвлекаться на помехи, не останавливаться, продолжать работу и довести задание до конца.".
+      </p>
     </div>
     <div class="overlay-instruction hidden"></div>
 
@@ -54,6 +59,25 @@
       </form>
     </div>
     <div class="overlay-form hidden"></div>
+
+    <div class="modal-stageEnd hidden">
+      <button class="close-modal-stageEnd">&times;</button>
+      <div id="stage123-modal">
+        <h2 id="stageEnd-header">✅ Задание выпонено!</h2>
+        <p class="instruction" id="modal-stage123End">
+          Вы можете перейти к следующему этапу нажав кнопку "К следующему заданию" или повторить текущий этап нажав
+          кнопку "Прервать выполнение задания"
+        </p>
+      </div>
+      <div class="stage4-modal hidden" id="stage4-modal">
+        <h2 id="testEnd-header">✅ Тест завершен!</h2>
+        <p class="instruction" id="modal-stage4End">
+          Вы можете посмотреть свой результат, нажав кнопку "Результат" или повторить текущий этап нажав, кнопку
+          "Прервать выполнение задания"
+        </p>
+      </div>
+    </div>
+    <div class="overlay-stageEnd hidden"></div>
 
     <div class="modal-result hidden">
       <button class="close-modal-result">&times;</button>
@@ -137,7 +161,7 @@
         <table class="result-table">
           <tr>
             <td class="result" id="conclution"><b>Заключение:</b></td>
-            <td class="result"></td>
+            <td class="result" id="result-time"></td>
           </tr>
         </table>
       </div>
@@ -168,6 +192,7 @@
         <button class="btn btn--stop" id="btn--stop">Прервать выполнение задания</button>
       </div>
       <div>
+        <p class="test-timer" id="stageID-label">Этап <span class="stageID-label">1</span></p>
         <p class="test-timer" id="test-timer">⏱️ Время выполнения теста:</p>
         <p class="timer" id="timer">0</p>
       </div>
